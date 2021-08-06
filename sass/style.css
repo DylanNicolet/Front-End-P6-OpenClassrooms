@@ -1,0 +1,290 @@
+body {
+  width: 90%;
+  margin: 5px 5%;
+  font-family: 'DM Sans', sans-serif;
+  max-width: 1980px;
+  position: relative;
+}
+
+@media only screen and (min-width: 1260px) {
+  body {
+    margin: 5px auto;
+  }
+}
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.button-contact {
+  position: absolute;
+  bottom: 20px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1260px) {
+  .button-contact {
+    position: unset;
+    height: 40px;
+  }
+}
+
+#homepage-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media only screen and (min-width: 1260px) {
+  .logo-with-nav {
+    width: 73%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .logo-with-nav {
+    width: 69.5%;
+  }
+}
+
+#button-skip {
+  padding: 5px 0px;
+  margin: 0px 0px 15px 0px;
+  border-radius: 7px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1em;
+  background-color: #DB8876;
+  display: block;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1260px) {
+  #button-skip {
+    margin: 0px 42%;
+  }
+}
+
+.fisheye-logo-link {
+  display: block;
+  cursor: pointer;
+}
+
+.fisheye-logo-svg {
+  width: 150px;
+  height: 50px;
+}
+
+@media only screen and (min-width: 1260px) {
+  .fisheye-logo-svg {
+    width: 180px;
+  }
+}
+
+.fisheye-logo-svg * {
+  width: 100%;
+  height: 100%;
+}
+
+header ul {
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.header-navtag {
+  color: #901c1c;
+  display: block;
+  text-decoration: none;
+  border: 1.5px solid #d6d6d6;
+  border-radius: 15px;
+  padding: 2px 7px;
+  margin: 2px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.fisheye-profil-svg {
+  width: 170px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.photographer-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.photographer-banner section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.photographer-banner img {
+  min-width: 90px;
+  height: 90px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+  margin-top: 15px;
+}
+
+.photographer-banner-text {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.photographer-banner-text section {
+  margin-top: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.profil-name {
+  color: #bf5138;
+  font-weight: 400;
+  font-size: 2.5em;
+  margin: 15px 0px 0px 0px;
+}
+
+#main-content {
+  margin: 30px 0px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main-content h1 {
+  color: #901c1c;
+  font-weight: 400;
+  font-size: 1em;
+  position: absolute;
+  top: 55px;
+  right: 5%;
+}
+
+@media only screen and (min-width: 1260px) {
+  #main-content h1 {
+    font-size: 1.7em;
+    margin: 15px 0px;
+    top: 35px;
+    right: 4%;
+  }
+}
+
+.photographer-profil {
+  text-align: center;
+  margin: 0px 0px 35px 0px;
+}
+
+@media only screen and (min-width: 1260px) {
+  .photographer-profil {
+    margin: 0px 20px 60px 20px;
+  }
+}
+
+.photographer-profil img {
+  width: 220px;
+  height: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.photographer-profil section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.photographer-main-link {
+  display: block;
+  text-decoration: none;
+  color: #bf5138;
+}
+
+.photographer-main-link h2 {
+  font-weight: 400;
+  font-size: 2.8em;
+  margin: 15px 0px 0px 0px;
+}
+
+.photographer-location {
+  color: #901c1c;
+  font-size: 1em;
+  margin: 0px;
+}
+
+.photographer-moto {
+  font-size: 0.8em;
+  margin: 5px 0px 0px 0px;
+}
+
+.photographer-price {
+  color: #868686;
+  font-size: 0.7em;
+  margin: 5px 0px 5px 0px;
+}
+
+.profil-navtag {
+  color: #901c1c;
+  display: block;
+  text-decoration: none;
+  border: 1.5px solid #d6d6d6;
+  border-radius: 15px;
+  padding: 2px 7px;
+  margin: 2px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+/*# sourceMappingURL=style.css.map */
