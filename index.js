@@ -1,6 +1,7 @@
 //DOM elements
 const title = document.getElementById("title");
 const main = document.getElementById("main-content");
+const tagButtons = document.getElementsByClassName("profil-navtag");
 
 //access JSON database
 let apiRequest = new XMLHttpRequest();
@@ -9,26 +10,19 @@ apiRequest.send();
 
 //main function for dynamic webpage loading
 apiRequest.onreadystatechange = () => {
-    if(apiRequest.readyState === 4) {
+    if(apiRequest.readyState === XMLHttpRequest.DONE) {
         const data = JSON.parse(apiRequest.response);
-        const mimiKeel = data.photographers[0];
-        const ellieRose = data.photographers[1];
-        const TracyGalindo = data.photographers[2];
-        const NabeelBradford = data.photographers[3];
-        const RhodeDubois = data.photographers[4];
-        const MarcelNikolic = data.photographers[5];
 
-        //add functions here
-        createProfil(mimiKeel);
-        createProfil(ellieRose);
-        createProfil(TracyGalindo);
-        createProfil(NabeelBradford);
-        createProfil(RhodeDubois);
-        createProfil(MarcelNikolic);
+        //loop for accessing photographer's data from JSON + create each profil
+        for (let j=0; j<data.photographers.length; j++){
+            createProfil(data.photographers[j]);
+        }
     }
 }
 
-//create photographer profil
+
+
+//function to create photographer profil
 function createProfil(photographerName){
 
     let tags = photographerName.tags;
@@ -45,7 +39,7 @@ function createProfil(photographerName){
     const newTagSection = document.createElement('section');
 
     //add content from JSON file to new DOM elements
-    newLink.setAttribute("href", "/profil-pages/mimi-keel.html");
+    newLink.setAttribute("href", "/profil-pages/" + photographerName.name + ".html");
     newImg.setAttribute("src", "/images/Photographers/" + photographerImg);
     newImg.setAttribute("alt", "");
     newH2.textContent = photographerName.name;
@@ -84,4 +78,3 @@ function createProfil(photographerName){
         newTagLink.appendChild(newSpan);
     };    
 }
-
