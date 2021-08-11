@@ -17,6 +17,21 @@ apiRequest.onreadystatechange = () => {
         const photographersData = data.photographers;
         
         createProfil(photographersData);
+
+        for (j=0; j<tagButtons.length; j++){
+            tagButtons[j].addEventListener("click", ($event) => {
+                let rawText = $event.target.text.toLowerCase();
+                let text = rawText.slice(1, rawText.length -3);
+
+                let newPhotographersData = photographersData.filter(function(photographers) {
+                    if (photographers.tags.includes(text)){
+                        return true;
+                    }
+                })
+
+                createProfil(newPhotographersData);
+            });
+        }
     }
 }
 
@@ -24,6 +39,7 @@ apiRequest.onreadystatechange = () => {
 
 //function to create photographer profil
 function createProfil(photographers){
+    main.innerHTML = "";
     for (let z=0; z<photographers.length; z++){
         
         let tags = photographers[z].tags;
@@ -71,6 +87,7 @@ function createProfil(photographers){
             const newTagLink = document.createElement('a');
             newTagLink.textContent = "#" + tags[i];
             newTagLink.classList.add("profil-navtag");
+            newTagLink.setAttribute("href", "#");
             newTagSection.appendChild(newTagLink);
 
             const newSpan = document.createElement('span');
@@ -78,5 +95,7 @@ function createProfil(photographers){
             newSpan.classList.add("screen-reader-only");
             newTagLink.appendChild(newSpan);
         };
+
+       
     }
 }
