@@ -1,33 +1,43 @@
 //DOM elements
 const title = document.getElementById("title");
 const main = document.getElementById("main-content");
-const tagButtons = document.getElementsByClassName("profil-navtag");
+const tagButtons = document.getElementsByClassName("navbar-navtag");
+const profilTagButtons = document.getElementsByClassName("profil-navtag");
 
 //access JSON database
 let apiRequest = new XMLHttpRequest();
 apiRequest.open('GET', 'database.json');
 apiRequest.send();
 
+
 //main function for dynamic webpage loading
 apiRequest.onreadystatechange = () => {
     if(apiRequest.readyState === XMLHttpRequest.DONE) {
         const data = JSON.parse(apiRequest.response);
-
-        //loop for accessing photographer's data from JSON + create each profil
         const photographersData = data.photographers;
         
         createProfil(photographersData);
 
+        //loop for navigation tags to reload homepage dynamically when clicked
         for (j=0; j<tagButtons.length; j++){
             tagButtons[j].addEventListener("click", ($event) => {
+                let rawText = $event.target.text.toLowerCase(); //makes tag name lowercase
+                let text = rawText.slice(1, rawText.length -3); //removes "#" and "tag" from tag name
+
+                //filters photographer's profils to match selected navigation tag
+                let newPhotographersData = photographersData.filter(photographers => (photographers.tags.includes(text)))
+
+                createProfil(newPhotographersData); //reloads page with new set of profils
+            });
+        }        
+
+        //loop for profil tags to reload homepage dynamically when clicked
+        for (v=0; v<profilTagButtons.length; v++){
+            profilTagButtons[v].addEventListener("click", ($event) => {
                 let rawText = $event.target.text.toLowerCase();
                 let text = rawText.slice(1, rawText.length -3);
 
-                let newPhotographersData = photographersData.filter(function(photographers) {
-                    if (photographers.tags.includes(text)){
-                        return true;
-                    }
-                })
+                let newPhotographersData = photographersData.filter(photographers => (photographers.tags.includes(text)))
 
                 createProfil(newPhotographersData);
             });
@@ -39,7 +49,15 @@ apiRequest.onreadystatechange = () => {
 
 //function to create photographer profil
 function createProfil(photographers){
-    main.innerHTML = "";
+
+    main.innerHTML = ""; //resets main section of HTML
+
+    //create title for main section
+    const newH1 = document.createElement('h1');
+    newH1.textContent = "Our photographers";
+    newH1.id = "title";
+    main.appendChild(newH1);
+
     for (let z=0; z<photographers.length; z++){
         
         let tags = photographers[z].tags;
@@ -94,8 +112,21 @@ function createProfil(photographers){
             newSpan.textContent = "Tag";
             newSpan.classList.add("screen-reader-only");
             newTagLink.appendChild(newSpan);
-        };
 
-       
+            //adds event listener to new tags
+            newTagLink.addEventListener("click", ($event) => {
+                let rawText = $event.target.text.toLowerCase();
+                let text = rawText.slice(1, rawText.length -3);
+
+                if(apiRequest.readyState === XMLHttpRequest.DONE) {
+                    const data = JSON.parse(apiRequest.response);
+                    const photographersData = data.photographers;
+
+                    let newPhotographersData = photographersData.filter(photographers => (photographers.tags.includes(text)))
+
+                    createProfil(newPhotographersData);
+                }
+            });
+        };
     }
 }
