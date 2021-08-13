@@ -23,24 +23,6 @@ body {
   width: 1px;
 }
 
-.button-contact {
-  position: absolute;
-  bottom: 20px;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-@media only screen and (min-width: 1260px) {
-  .button-contact {
-    position: unset;
-    height: 40px;
-  }
-}
-
 #homepage-header {
   width: 100%;
   display: -webkit-box;
@@ -85,6 +67,11 @@ body {
   background-color: #DB8876;
   display: block;
   cursor: pointer;
+  opacity: 0;
+}
+
+#button-skip:hover, #button-skip:focus {
+  opacity: 1;
 }
 
 @media only screen and (min-width: 1260px) {
@@ -137,56 +124,6 @@ header ul {
   margin: 2px;
   font-size: 0.8em;
   font-weight: 500;
-}
-
-.fisheye-profil-svg {
-  width: 170px;
-  margin-top: 25px;
-  margin-bottom: 10px;
-}
-
-.photographer-banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.photographer-banner section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.photographer-banner img {
-  min-width: 90px;
-  height: 90px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50px;
-  margin-top: 15px;
-}
-
-.photographer-banner-text {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.photographer-banner-text section {
-  margin-top: 5px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.profil-name {
-  color: #bf5138;
-  font-weight: 400;
-  font-size: 2.5em;
-  margin: 15px 0px 0px 0px;
 }
 
 #main-content {

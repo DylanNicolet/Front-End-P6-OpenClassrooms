@@ -30,6 +30,11 @@
     background-color: $color-secondary;
     display: block;
     cursor: pointer;
+    opacity: 0;
+
+    &:hover , &:focus{
+        opacity: 1;
+    }
 
     @include desktop-only{
         margin: 0px 42%;
