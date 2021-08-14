@@ -1,0 +1,24 @@
+.filter{
+    display: none;
+    width: 100%;
+
+    label{
+        margin-right: 15px;
+    }
+}
+
+#select-menu{
+    position: relative;
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        background-color: $color-primary;
+        border-radius: 3px;
+        overflow: hidden;
+        display: none;
+        
+    }
+}

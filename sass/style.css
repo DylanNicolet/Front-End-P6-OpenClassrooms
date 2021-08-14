@@ -23,6 +23,57 @@ body {
   width: 1px;
 }
 
+.contact-button {
+  /*for profil pages*/
+  position: absolute;
+  top: 0px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.button-style {
+  background-color: #901c1c;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 5px;
+  border-width: 0px;
+  padding: 7px 10px;
+  text-align: left;
+}
+
+.filter {
+  display: none;
+  width: 100%;
+}
+
+.filter label {
+  margin-right: 15px;
+}
+
+#select-menu {
+  position: relative;
+}
+
+#select-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 0;
+  background-color: #901c1c;
+  border-radius: 3px;
+  overflow: hidden;
+  display: none;
+}
+
 #homepage-header {
   width: 100%;
   display: -webkit-box;
@@ -223,5 +274,70 @@ header ul {
   margin: 2px;
   font-size: 0.8em;
   font-weight: 500;
+}
+
+.profilpage-header {
+  margin: 30px 0px 20px 0px;
+}
+
+.profil-id {
+  display: none;
+}
+
+.profil-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profil-tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.profil-name {
+  color: #bf5138;
+  font-weight: 400;
+  font-size: 2.6em;
+  margin: 15px 0px 0px 0px;
+}
+
+.profil-city {
+  color: #901c1c;
+  font-size: 1em;
+  margin: 0px;
+}
+
+.profil-tagline {
+  font-size: 0.8em;
+  margin: 5px 0px 0px 0px;
+  color: #868686;
+}
+
+.profilpage-tags {
+  color: #901c1c;
+  display: block;
+  text-decoration: none;
+  border: 1.5px solid #d6d6d6;
+  border-radius: 15px;
+  padding: 2px 7px;
+  margin: 2px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.profil-picture {
+  margin-top: 15px;
+  min-width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
 }
 /*# sourceMappingURL=style.css.map */
