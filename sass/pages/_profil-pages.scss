@@ -9,6 +9,11 @@
 .profil-banner{
     display: flex;
     justify-content: space-between;
+
+    @include desktop-only{
+        background-color: rgb(250, 250, 250);
+        padding: 45px 30px;
+    }
 }
 
 .profil-tags{
@@ -21,6 +26,10 @@
     font-weight: 400;
     font-size: 2.6em;
     margin: 15px 0px 0px 0px;
+
+    @include desktop-only{
+        margin: 0px;
+    }
 }
 
 .profil-city{
@@ -33,6 +42,10 @@
     font-size: 0.8em;
     margin: 5px 0px 0px 0px;
     color: $color-font-tertiary;
+
+    @include desktop-only{
+        margin: 10px 0px;
+    }
 }
 
 .profilpage-tags{
@@ -52,17 +65,40 @@
     min-width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: 50%;
+
+    @include desktop-only{
+        height: 170px;
+        min-width: 170px;
+        margin-top: 0px;
+    }
+}
+
+.info-and-contactbtn{
+    @include desktop-only{
+        display: flex;
+    }
 }
 
 .media-section{
     margin-top: 50px;
     min-width: 100%;
 
+    @include desktop-only{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     a{
         display: block;
         width: 100%;
         height: 200px;
+
+        @include desktop-only{
+            width: 330px;
+            height: 300px;
+        }
     }
 
     &__card{
@@ -71,7 +107,10 @@
         justify-content: space-between;
         align-items: center;
 
-        
+        @include desktop-only{
+            width: 330px;
+            margin-bottom: 30px;
+        }
     }
 
     &__media{
@@ -79,6 +118,10 @@
         height: 200px;
         border-radius: 5px;
         object-fit: cover;
+
+        @include desktop-only{
+            height: 300px;
+        }
     }
 
     &__title{
@@ -101,4 +144,37 @@
         color: $color-primary;
         font-size: 15px;
     }
+}
+
+#total-likes-id{
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    @include desktop-only{
+        position: fixed;
+        bottom: 0px;
+        right: 30px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        width: 250px;
+    }
+}
+
+#like-and-icon{
+    display: flex;
+    align-items: center;
+
+    p{
+        margin: auto 5px auto 20px;
+    }
+}
+
+.profil-page-price{
+    margin: 13px 20px;
 }

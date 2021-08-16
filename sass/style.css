@@ -35,6 +35,15 @@ body {
   text-align: center;
 }
 
+@media only screen and (min-width: 1260px) {
+  .contact-button {
+    position: initial;
+    height: 45px;
+    width: 120px;
+    text-align: center;
+  }
+}
+
 .button-style {
   background-color: #901c1c;
   color: white;
@@ -42,12 +51,19 @@ body {
   border-radius: 5px;
   border-width: 0px;
   padding: 7px 10px;
-  text-align: left;
 }
 
 .filter {
   display: none;
   width: 100%;
+}
+
+@media only screen and (min-width: 1260px) {
+  .filter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .filter label {
@@ -293,6 +309,13 @@ header ul {
           justify-content: space-between;
 }
 
+@media only screen and (min-width: 1260px) {
+  .profil-banner {
+    background-color: #fafafa;
+    padding: 45px 30px;
+  }
+}
+
 .profil-tags {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -308,6 +331,12 @@ header ul {
   margin: 15px 0px 0px 0px;
 }
 
+@media only screen and (min-width: 1260px) {
+  .profil-name {
+    margin: 0px;
+  }
+}
+
 .profil-city {
   color: #901c1c;
   font-size: 1em;
@@ -318,6 +347,12 @@ header ul {
   font-size: 0.8em;
   margin: 5px 0px 0px 0px;
   color: #868686;
+}
+
+@media only screen and (min-width: 1260px) {
+  .profil-tagline {
+    margin: 10px 0px;
+  }
 }
 
 .profilpage-tags {
@@ -338,7 +373,23 @@ header ul {
   height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50px;
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 1260px) {
+  .profil-picture {
+    height: 170px;
+    min-width: 170px;
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 1260px) {
+  .info-and-contactbtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .media-section {
@@ -346,10 +397,30 @@ header ul {
   min-width: 100%;
 }
 
+@media only screen and (min-width: 1260px) {
+  .media-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .media-section a {
   display: block;
   width: 100%;
   height: 200px;
+}
+
+@media only screen and (min-width: 1260px) {
+  .media-section a {
+    width: 330px;
+    height: 300px;
+  }
 }
 
 .media-section__card {
@@ -366,12 +437,25 @@ header ul {
           align-items: center;
 }
 
+@media only screen and (min-width: 1260px) {
+  .media-section__card {
+    width: 330px;
+    margin-bottom: 30px;
+  }
+}
+
 .media-section__media {
   width: 100%;
   height: 200px;
   border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media only screen and (min-width: 1260px) {
+  .media-section__media {
+    height: 300px;
+  }
 }
 
 .media-section__title {
@@ -397,5 +481,50 @@ header ul {
 .media-section i {
   color: #901c1c;
   font-size: 15px;
+}
+
+#total-likes-id {
+  background-color: #DB8876;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@media only screen and (min-width: 1260px) {
+  #total-likes-id {
+    position: fixed;
+    bottom: 0px;
+    right: 30px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: 250px;
+  }
+}
+
+#like-and-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#like-and-icon p {
+  margin: auto 5px auto 20px;
+}
+
+.profil-page-price {
+  margin: 13px 20px;
 }
 /*# sourceMappingURL=style.css.map */

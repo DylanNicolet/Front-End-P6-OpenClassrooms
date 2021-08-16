@@ -114,10 +114,11 @@ apiRequest.onreadystatechange = () => {
         const newLikesIcon = document.createElement('i');
         const newPhotographersPrice = document.createElement('p');
 
-        
         newLikesIcon.setAttribute("class", "fas fa-heart");
-        newPhotographersPrice.textContent = currentPhotographer.price + "$/day";
+        newPhotographersPrice.textContent = currentPhotographer.price + "$" + " " + "/" + " " + "Day";
         newTotalLikes.textContent = totalNumberOfLikes;
+
+        newPhotographersPrice.setAttribute("class", "profil-page-price");
 
         likeAndIcon.appendChild(newTotalLikes);
         likeAndIcon.appendChild(newLikesIcon);

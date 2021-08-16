@@ -7,6 +7,13 @@
     left: 0;
     right: 0;
     text-align: center;
+
+    @include desktop-only{
+        position: initial;
+        height: 45px;
+        width: 120px;
+        text-align: center;
+    }
 }
 
 .button-style{
@@ -16,5 +23,4 @@
     border-radius: 5px;
     border-width: 0px;
     padding: 7px 10px;
-    text-align: left;
 }
