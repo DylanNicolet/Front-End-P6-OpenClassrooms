@@ -23,6 +23,10 @@ body {
   width: 1px;
 }
 
+.hidden {
+  display: none;
+}
+
 .contact-button {
   /*for profil pages*/
   position: fixed;
@@ -63,6 +67,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-top: 30px;
   }
 }
 
@@ -75,9 +80,6 @@ body {
 }
 
 #select-menu__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -87,7 +89,6 @@ body {
   background-color: #901c1c;
   border-radius: 3px;
   overflow: hidden;
-  display: none;
 }
 
 #homepage-header {

@@ -25,7 +25,7 @@
             </svg>
         </a>
     </header>
-    <main>
+    <main id="main">
         <!--don't forget to fix BEM selectors-->
         <p id="profil-id-id" class="profil-id">243</p> <!--change this number to the "id" of the photographer from database.json-->
         <section class="profil-banner">
@@ -44,9 +44,7 @@
         <section class="filter">
             <label for="select-menu">Order by</label>
             <section id="select-menu">
-                <button aria-haspopup="listbox" aria-labelledby="exp_elem exp_button" id="select-menu__button" class="button-style">
-                    Popularity
-                </button>
+                <button aria-haspopup="listbox" aria-labelledby="exp_elem exp_button" id="select-menu__button" class="button-filter button-style">Popularity</button>
                 <section id="select-menu__list" tabindex="-1" role="listbox" aria-labelledby="exp_elem" class="hidden">
                     <button id="select-menu__popularity" role="option" class="button-style">Popularity</button>
                     <button id="select-menu__date" role="option" class="button-style">Date</button>

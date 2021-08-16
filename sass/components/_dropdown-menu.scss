@@ -4,6 +4,7 @@
 
     @include desktop-only{
         display: flex;
+        margin-top: 30px;
     }
 
     label{
@@ -14,14 +15,16 @@
 #select-menu{
     position: relative;
 
+    &__button{
+
+    }
+
     &__list{
-        display: flex;
         flex-direction: column;
         position: absolute;
         top: 0;
         background-color: $color-primary;
         border-radius: 3px;
         overflow: hidden;
-        display: none;
     }
 }

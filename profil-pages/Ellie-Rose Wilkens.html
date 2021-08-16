@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="/sass/style.css" type="text/css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/2d28fa9fac.js" crossorigin="anonymous"></script>
     <title>Fisheye | Mimi Keel</title>
 </head>
 <body>
@@ -24,8 +25,9 @@
             </svg>
         </a>
     </header>
-    <main>
-        <p id="profil-id-id" class="profil-id">930</p>
+    <main id="main">
+        <!--don't forget to fix BEM selectors-->
+        <p id="profil-id-id" class="profil-id">930</p> <!--change this number to the "id" of the photographer from database.json-->
         <section class="profil-banner">
             <section class="info-and-contactbtn">
                 <section class="profil-info">
@@ -34,11 +36,28 @@
                     <p id="profil-tagline-id" class="profil-tagline"></p>
                     <section id="profil-tags-id" class="profil-tags"></section>
                 </section>
-                <button class="contact-button">Contact me</button>
+                <button class="contact-button button-style">Contact me</button>
             </section>
             <img alt="" id="profil-picture-id" class="profil-picture">
         </section>
+
+        <section class="filter">
+            <label for="select-menu">Order by</label>
+            <section id="select-menu">
+                <button aria-haspopup="listbox" aria-labelledby="exp_elem exp_button" id="select-menu__button" class="button-filter button-style">Popularity</button>
+                <section id="select-menu__list" tabindex="-1" role="listbox" aria-labelledby="exp_elem" class="hidden">
+                    <button id="select-menu__popularity" role="option" class="button-style">Popularity</button>
+                    <button id="select-menu__date" role="option" class="button-style">Date</button>
+                    <button id="select-menu__title" role="option" class="button-style">Title</button>
+                </section>
+            </section>
+        </section>
+
         <section class="media-section" id="media-section-id"></section>
+
+        <section class="total-likes-section" id="total-likes-id">
+            <section id="like-and-icon"></section>
+        </section>
     </main>
     <script src="/JavaScripts/profil-page.js" type="text/javascript"></script>
 </body>
