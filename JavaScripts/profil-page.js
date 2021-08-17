@@ -15,6 +15,10 @@ const filterTitle = document.getElementById("select-menu__title");
 const mediaSection = document.getElementById("media-section-id");
 const totalLikesSection = document.getElementById("total-likes-id");
 const likeAndIcon = document.getElementById("like-and-icon");
+const lightBox = document.getElementById("lightbox");
+const lightBoxContent = document.getElementById("lightbox__content");
+lightBoxMediaContainer = document.getElementById('lightbox__media-container');
+const lightBoxCloseAndNext = document.getElementById("lightbox__close-next-btn");
 
 
 ///access JSON database
@@ -78,9 +82,24 @@ apiRequest.onreadystatechange = () => {
                     const newImg = document.createElement('img');
                     newImg.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].image);
                     newImg.setAttribute("class", "media-section__media");
+                    newImg.setAttribute("id", mediaArray[x].id);
                     newMediaCard.appendChild(newImgLink);
                     newImgLink.appendChild(newImg);
-
+                    
+                    //add functionality to open lightbox-modal
+                    newImgLink.addEventListener("click", ($event) => {
+                        lightBox.setAttribute("class", "lightbox--openned");
+                        lightBoxMediaContainer.innerHTML = "";
+                        let clickedMediaId = $event.path[0].id;
+                        let lightboxMedia = document.createElement('img');
+                        
+                        for(let i=0; i<currentPhotographerMedia.length; i++){
+                            if (clickedMediaId == currentPhotographerMedia[i].id){
+                                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].image);
+                            }
+                        }
+                        lightBoxMediaContainer.appendChild(lightboxMedia);
+                    });
                 }
 
                 if(keys.includes("video")){
@@ -90,8 +109,27 @@ apiRequest.onreadystatechange = () => {
                     newVideo.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].video);
                     newVideo.setAttribute("type", "video/mp4");
                     newVideo.setAttribute("class", "media-section__media");
+                    newVideo.setAttribute("id", mediaArray[x].id);
                     newMediaCard.appendChild(newVideoLink);
                     newVideoLink.appendChild(newVideo);
+
+                    //add functionality to open lightbox-modal
+                    newVideoLink.addEventListener("click", ($event) => {
+                        lightBox.setAttribute("class", "lightbox--openned");
+                        lightBoxMediaContainer.innerHTML = "";
+                        let clickedMediaId = $event.path[0].id;
+                        let lightboxMedia = document.createElement('video');
+
+                        for(let i=0; i<currentPhotographerMedia.length; i++){
+                            if (clickedMediaId == currentPhotographerMedia[i].id){
+                                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].video);
+                                lightboxMedia.setAttribute("type", "video/mp4");
+                                lightboxMedia.setAttribute("controls", "");
+                            }
+                        }
+                        lightBoxMediaContainer.appendChild(lightboxMedia);
+                    });
+
                 }
                 
                 newMediaTitle.textContent = mediaArray[x].title;
@@ -118,6 +156,8 @@ apiRequest.onreadystatechange = () => {
                     newTotalLikes.textContent = totalNumberOfLikes;
                     newMediaLikeCount.textContent++
                 });
+
+                
             }  
        }
 

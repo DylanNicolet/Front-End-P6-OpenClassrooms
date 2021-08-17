@@ -135,7 +135,7 @@ body {
   background-color: #DB8876;
   display: block;
   cursor: pointer;
-  opacity: 0;
+  opacity: 1;
 }
 
 #button-skip:hover, #button-skip:focus {
