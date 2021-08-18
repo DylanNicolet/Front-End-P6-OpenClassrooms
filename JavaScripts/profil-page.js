@@ -17,8 +17,13 @@ const totalLikesSection = document.getElementById("total-likes-id");
 const likeAndIcon = document.getElementById("like-and-icon");
 const lightBox = document.getElementById("lightbox");
 const lightBoxContent = document.getElementById("lightbox__content");
-lightBoxMediaContainer = document.getElementById('lightbox__media-container');
+const lightBoxMediaContainer = document.getElementById('lightbox__media-container');
 const lightBoxCloseAndNext = document.getElementById("lightbox__close-next-btn");
+const lightBoxTitle = document.getElementById('lightbox__title');
+const lightBoxCloseBtn = document.getElementById('lightbox__close-btn');
+const lightBoxPreviousBtn = document.getElementById('lightbox__previous-btn');
+const lightBoxNextBtn = document.getElementById('lightbox__next-btn');
+const lightBoxLoadedMedia = document.getElementById('lightbox__media');
 
 
 ///access JSON database
@@ -88,6 +93,7 @@ apiRequest.onreadystatechange = () => {
                     
                     //add functionality to open lightbox-modal
                     newImgLink.addEventListener("click", ($event) => {
+                        lightBox.classList.remove("lightbox--closed");
                         lightBox.setAttribute("class", "lightbox--openned");
                         lightBoxMediaContainer.innerHTML = "";
                         let clickedMediaId = $event.path[0].id;
@@ -96,8 +102,10 @@ apiRequest.onreadystatechange = () => {
                         for(let i=0; i<currentPhotographerMedia.length; i++){
                             if (clickedMediaId == currentPhotographerMedia[i].id){
                                 lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].image);
+                                lightBoxTitle.textContent = currentPhotographerMedia[i].title;
                             }
                         }
+                        lightboxMedia.setAttribute("id", "lightbox__media");
                         lightBoxMediaContainer.appendChild(lightboxMedia);
                     });
                 }
@@ -125,8 +133,10 @@ apiRequest.onreadystatechange = () => {
                                 lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].video);
                                 lightboxMedia.setAttribute("type", "video/mp4");
                                 lightboxMedia.setAttribute("controls", "");
+                                lightBoxTitle.textContent = currentPhotographerMedia[i].title;
                             }
                         }
+                        lightboxMedia.setAttribute("id", "lightbox__media");
                         lightBoxMediaContainer.appendChild(lightboxMedia);
                     });
 
@@ -198,6 +208,7 @@ apiRequest.onreadystatechange = () => {
             });
 
             loadMedia(orderArray);
+
         });
 
         //order by date
@@ -232,6 +243,19 @@ apiRequest.onreadystatechange = () => {
             })
 
             loadMedia(orderArray);
+        });
+
+        //lightbox close-btn
+        lightBoxCloseBtn.addEventListener("click", () => {
+            lightBox.classList.remove("lightbox--openned");
+            lightBox.classList.add("lightbox--closed");
+        });
+
+        //lightbox arrows functionality
+        
+
+        lightBoxPreviousBtn.addEventListener("click", () => {
+            console.log(lightBoxLoadedMedia);
         });
     }
 }

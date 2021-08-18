@@ -91,6 +91,51 @@ body {
   overflow: hidden;
 }
 
+#lightbox {
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  border-style: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#lightbox__media {
+  max-width: 300px;
+  max-height: 200px;
+}
+
+#lightbox__content {
+  max-height: 200px;
+}
+
+#lightbox__close-next-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.lightbox--openned {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lightbox--closed {
+  display: none;
+}
+
+.fa-times {
+  color: #901c1c;
+}
+
 #homepage-header {
   width: 100%;
   display: -webkit-box;

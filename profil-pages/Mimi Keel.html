@@ -59,12 +59,17 @@
             <section id="like-and-icon"></section>
         </section>
 
-        <section id="lightbox">
+        <dialog id="lightbox" class="lightbox--closed">
+            <i id="lightbox__previous-btn" class="fas fa-chevron-left"></i>
             <section id="lightbox__content">
-                <section id="lightbox__media-container"></section>
-                <section id="lightbox__close-next-btn"></section>
+                <section id="lightbox__media-container"></section>    
             </section>
-        </section>
+            <section id="lightbox__close-next-btn">
+                <i id="lightbox__close-btn" class="fas fa-times"></i>
+                <i id="lightbox__next-btn" class="fas fa-chevron-right"></i>
+            </section>
+            <p id="lightbox__title"></p>
+        </dialog>
     </main>
     <script src="/JavaScripts/profil-page.js" type="text/javascript"></script>
 </body>

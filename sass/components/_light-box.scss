@@ -1,0 +1,36 @@
+#lightbox{
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+    border-style: none;
+    flex-wrap: wrap;
+
+    &__media{
+        max-width: 300px;
+        max-height: 200px;
+    }
+
+    &__content{
+        max-height: 200px;
+    }
+
+    &__close-next-btn{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.lightbox--openned{
+    display: flex;
+}
+
+.lightbox--closed{
+    display: none;
+}
+
+.fa-times{
+    color: $color-primary;
+}
