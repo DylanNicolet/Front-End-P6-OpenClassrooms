@@ -101,6 +101,7 @@ body {
   border-style: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 0px;
 }
 
 #lightbox__media {
@@ -132,8 +133,13 @@ body {
   display: none;
 }
 
+/*close btn*/
 .fa-times {
   color: #901c1c;
+}
+
+#lightbox__media-container {
+  width: auto;
 }
 
 #homepage-header {

@@ -7,6 +7,7 @@
     background-color: red;
     border-style: none;
     flex-wrap: wrap;
+    margin: 0px;
 
     &__media{
         max-width: 300px;
@@ -31,6 +32,11 @@
     display: none;
 }
 
+/*close btn*/
 .fa-times{
     color: $color-primary;
+}
+
+#lightbox__media-container{
+    width: auto;
 }

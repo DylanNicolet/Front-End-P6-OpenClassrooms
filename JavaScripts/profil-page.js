@@ -129,10 +129,11 @@ apiRequest.onreadystatechange = () => {
 
                     //add functionality to open lightbox-modal
                     newVideoLink.addEventListener("click", ($event) => {
+                        lightBox.classList.remove("lightbox--closed");
                         lightBox.setAttribute("class", "lightbox--openned");
                         lightBoxMediaContainer.innerHTML = "";
                         clickedMediaId = $event.path[0].id;
-                        let lightboxMedia = document.createElement('video');
+                        lightboxMedia = document.createElement('video');
 
                         for(let i=0; i<currentPhotographerMedia.length; i++){
                             if (clickedMediaId == currentPhotographerMedia[i].id){
@@ -260,29 +261,64 @@ apiRequest.onreadystatechange = () => {
             lightBox.classList.add("lightbox--closed");
         });
 
-        
         //lightbox backward arrow functionality
         lightBoxPreviousBtn.addEventListener("click", () => {
             let previousMedia = 0;
+            let previousMediaKeys = 0;
             for(let i=0; i<currentMediaOrder.length; i++){
                 if(lightBoxTitle.textContent === currentMediaOrder[i].title){
                     previousMedia = currentMediaOrder[i-1];
+                    previousMediaKeys = Object.keys(currentMediaOrder[i-1]);
                 }
             }
-            lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.image);
-            lightBoxTitle.textContent = previousMedia.title;
+            if(previousMediaKeys.includes("image")){
+                lightBoxMediaContainer.innerHTML = "";
+                lightboxMedia = document.createElement('img');
+                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.image);
+                lightBoxTitle.textContent = previousMedia.title;
+                lightboxMedia.setAttribute("id", "lightbox__media");
+                lightBoxMediaContainer.appendChild(lightboxMedia);
+            }
+            if(previousMediaKeys.includes("video")){
+                lightBoxMediaContainer.innerHTML = "";
+                lightboxMedia = document.createElement('video');
+                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.video);
+                lightboxMedia.setAttribute("type", "video/mp4");
+                lightboxMedia.setAttribute("controls", "");
+                lightBoxTitle.textContent = previousMedia.title;
+                lightboxMedia.setAttribute("id", "lightbox__media");
+                lightBoxMediaContainer.appendChild(lightboxMedia);
+            }
         });
 
         //lightbox forward arrow functionality
         lightBoxNextBtn.addEventListener("click", () => {
-            let NextMedia = 0;
+            let nextMedia = 0;
+            let nextMediaKeys = 0;
             for(let i=0; i<currentMediaOrder.length; i++){
                 if(lightBoxTitle.textContent === currentMediaOrder[i].title){
-                    NextMedia = currentMediaOrder[i+1];
+                    nextMedia = currentMediaOrder[i+1];
+                    nextMediaKeys = Object.keys(currentMediaOrder[i+1]);
                 }
             }
-            lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + NextMedia.image);
-            lightBoxTitle.textContent = NextMedia.title;
+            if(nextMediaKeys.includes("image")){
+                lightBoxMediaContainer.innerHTML = "";
+                lightboxMedia = document.createElement('img');
+                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + nextMedia.image);
+                lightBoxTitle.textContent = nextMedia.title;
+                lightboxMedia.setAttribute("id", "lightbox__media");
+                lightBoxMediaContainer.appendChild(lightboxMedia);
+            }
+            if(nextMediaKeys.includes("video")){
+                lightBoxMediaContainer.innerHTML = "";
+                lightboxMedia = document.createElement('video');
+                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + nextMedia.video);
+                lightboxMedia.setAttribute("type", "video/mp4");
+                lightboxMedia.setAttribute("controls", "");
+                lightBoxTitle.textContent = nextMedia.title;
+                lightboxMedia.setAttribute("id", "lightbox__media");
+                lightBoxMediaContainer.appendChild(lightboxMedia);
+            }
         });
     }
 }
