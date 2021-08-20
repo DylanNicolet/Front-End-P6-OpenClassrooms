@@ -5,7 +5,7 @@ const profilName = document.getElementById("profil-name-id");
 const profilCity = document.getElementById("profil-city-id");
 const profilTagline = document.getElementById("profil-tagline-id");
 const profilTagsSection = document.getElementById("profil-tags-id");
-const contactButton = document.getElementsByClassName("contactButton");
+const contactButton = document.getElementById("contact-button-id");
 const profilPicture = document.getElementById("profil-picture-id");
 const filterButton = document.getElementById("select-menu__button");
 const filterList = document.getElementById("select-menu__list");
@@ -318,6 +318,6 @@ apiRequest.onreadystatechange = () => {
                 lightboxMedia.setAttribute("id", "lightbox__media");
                 lightBoxMediaContainer.appendChild(lightboxMedia);
             }
-        });
+        }); 
     }
 }
