@@ -16,7 +16,6 @@ const mediaSection = document.getElementById("media-section-id");
 const totalLikesSection = document.getElementById("total-likes-id");
 const likeAndIcon = document.getElementById("like-and-icon");
 const lightBox = document.getElementById("lightbox");
-const lightBoxContent = document.getElementById("lightbox__content");
 const lightBoxMediaContainer = document.getElementById('lightbox__media-container');
 const lightBoxCloseAndNext = document.getElementById("lightbox__close-next-btn");
 const lightBoxTitle = document.getElementById('lightbox__title');

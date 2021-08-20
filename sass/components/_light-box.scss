@@ -4,23 +4,37 @@
     left: 0vw;
     width: 100vw;
     height: 100vh;
-    background-color: red;
+    background-color: white;
     border-style: none;
     flex-wrap: wrap;
     margin: 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
     &__media{
-        max-width: 300px;
-        max-height: 200px;
+        width: 90%;
+        height: auto;
+        object-fit: contain;
     }
 
-    &__content{
-        max-height: 200px;
-    }
-
-    &__close-next-btn{
+    &__media-container{
+        width: 90%;
         display: flex;
+        justify-content: center;
+        height: auto;
+    }
+
+    /*includes close button & next button*/
+    &__close-next-btn{
+        position: relative;
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
         flex-direction: column;
+    }
+
+    &__title{
     }
 }
 
@@ -35,8 +49,4 @@
 /*close btn*/
 .fa-times{
     color: $color-primary;
-}
-
-#lightbox__media-container{
-    width: auto;
 }
