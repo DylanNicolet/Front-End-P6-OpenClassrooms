@@ -5,7 +5,7 @@ const lastNameInput = document.getElementById("last-name__input");
 const emailInput = document.getElementById("email__input");
 const messageInput = document.getElementById('message__input');
 const sendButton = document.getElementById("modal-form__send-button");
-const ModalFormCloseButton = document.getElementById("modal-form__c")
+const ModalFormCloseButton = document.getElementById("modal-form__close-button")
 
 //open modal form
 contactButton.addEventListener("click", () => {

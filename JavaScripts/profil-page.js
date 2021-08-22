@@ -36,7 +36,7 @@ apiRequest.onreadystatechange = () => {
         const data = JSON.parse(apiRequest.response);
         const photographersData = data.photographers;
         const media = data.media;
-        let currentPhotographer = "";
+        let currentPhotographer = 0;
         let totalNumberOfLikes = 0;
         let clickedMediaId = 0;
         let lightboxMedia = 0;
@@ -48,6 +48,15 @@ apiRequest.onreadystatechange = () => {
                 currentPhotographer = photographersData[i];
             }
         }
+        
+        //filter media from JSON for current photographer only
+        let currentPhotographerMedia = media.filter(function(photographerMedia){
+            if (photographerMedia.photographerId == currentPhotographer.id){
+                return true;
+            }
+        })
+        let filteredMediaArray = currentPhotographerMedia;//defines initial media order for later filter use
+
 
         //add content to profil-banner
         profilName.textContent = currentPhotographer.name;
@@ -58,19 +67,29 @@ apiRequest.onreadystatechange = () => {
         //loop  to create tags for profil-banner
         for (j=0; j<currentPhotographer.tags.length; j++){
             const newTagLink = document.createElement('a');
+            
             newTagLink.textContent = "#" + currentPhotographer.tags[j];
             newTagLink.classList.add("profilpage-tags");
             newTagLink.setAttribute("href", "#");
             profilTagsSection.appendChild(newTagLink);
-        }
+            const newSpan = document.createElement('span');
+            newSpan.textContent = "Tag";
+            newSpan.classList.add("screen-reader-only");
+            newTagLink.appendChild(newSpan);
 
-        //filter media from JSON for current photographer only
-        let currentPhotographerMedia = media.filter(function(photographerMedia){
-            if (photographerMedia.photographerId == currentPhotographer.id){
-                return true;
-            }
-        })
-        let currentMediaOrder = currentPhotographerMedia;
+            //add functionality to profil-tag filters
+            newTagLink.addEventListener("click", ($event) => {
+                let rawText = $event.target.text.toLowerCase(); //makes tag name lowercase
+                let filterText = rawText.slice(1, rawText.length -3); //removes "#" and "tag" from tag name
+                
+                //filters current media order to match selected profil tag
+                filteredMediaArray = currentPhotographerMedia.filter(media => (media.tags.includes(filterText)));
+
+                //reloads media section with filtered media list
+                mediaSection.innerHTML = "";
+                loadMedia(filteredMediaArray);
+            })
+        }
 
        //function to load media dynamically 
        function loadMedia(mediaArray){
@@ -196,7 +215,7 @@ apiRequest.onreadystatechange = () => {
         totalLikesSection.appendChild(newPhotographersPrice);
 
 
-        //add functionality to filter-btn
+        //add functionality to order-by btn
         filterButton.addEventListener("click",() =>{
             filterList.classList.remove("hidden");
         });
@@ -207,14 +226,11 @@ apiRequest.onreadystatechange = () => {
             mediaSection.innerHTML = "";
             filterButton.textContent = "Popularity";
 
-            let orderArray = currentPhotographerMedia;
-
-            orderArray.sort((a,b) => {
+            filteredMediaArray.sort((a,b) => {
                 return b.likes - a.likes;
             });
 
-            currentMediaOrder = orderArray;
-            loadMedia(orderArray);
+            loadMedia(filteredMediaArray);
         });
 
         //order by date
@@ -223,14 +239,11 @@ apiRequest.onreadystatechange = () => {
             mediaSection.innerHTML = "";
             filterButton.textContent = "Date";
 
-            let orderArray = currentPhotographerMedia;
-
-            orderArray.sort((a,b) =>{
+            filteredMediaArray.sort((a,b) =>{
                 return new Date(b.date).getTime() - new Date(a.date).getTime();
             });
 
-            currentMediaOrder = orderArray;
-            loadMedia(orderArray);
+            loadMedia(filteredMediaArray);
         });
 
         //order by title
@@ -239,9 +252,7 @@ apiRequest.onreadystatechange = () => {
             mediaSection.innerHTML = "";
             filterButton.textContent = "Title";
 
-            let orderArray = currentPhotographerMedia;
-
-            orderArray.sort(function(a,b){
+            filteredMediaArray.sort(function(a,b){
                 if (a.title < b.title){
                     return -1;
                 }
@@ -250,9 +261,9 @@ apiRequest.onreadystatechange = () => {
                 }
             })
 
-            currentMediaOrder = orderArray;
-            loadMedia(orderArray);
+            loadMedia(filteredMediaArray);
         });
+
 
         //lightbox close-btn
         lightBoxCloseBtn.addEventListener("click", () => {
@@ -264,10 +275,10 @@ apiRequest.onreadystatechange = () => {
         lightBoxPreviousBtn.addEventListener("click", () => {
             let previousMedia = 0;
             let previousMediaKeys = 0;
-            for(let i=0; i<currentMediaOrder.length; i++){
-                if(lightBoxTitle.textContent === currentMediaOrder[i].title){
-                    previousMedia = currentMediaOrder[i-1];
-                    previousMediaKeys = Object.keys(currentMediaOrder[i-1]);
+            for(let i=0; i<filteredMediaArray.length; i++){
+                if(lightBoxTitle.textContent === filteredMediaArray[i].title){
+                    previousMedia = filteredMediaArray[i-1];
+                    previousMediaKeys = Object.keys(filteredMediaArray[i-1]);
                 }
             }
             if(previousMediaKeys.includes("image")){
@@ -294,10 +305,10 @@ apiRequest.onreadystatechange = () => {
         lightBoxNextBtn.addEventListener("click", () => {
             let nextMedia = 0;
             let nextMediaKeys = 0;
-            for(let i=0; i<currentMediaOrder.length; i++){
-                if(lightBoxTitle.textContent === currentMediaOrder[i].title){
-                    nextMedia = currentMediaOrder[i+1];
-                    nextMediaKeys = Object.keys(currentMediaOrder[i+1]);
+            for(let i=0; i<filteredMediaArray.length; i++){
+                if(lightBoxTitle.textContent === filteredMediaArray[i].title){
+                    nextMedia = filteredMediaArray[i+1];
+                    nextMediaKeys = Object.keys(filteredMediaArray[i+1]);
                 }
             }
             if(nextMediaKeys.includes("image")){
