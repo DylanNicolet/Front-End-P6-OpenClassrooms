@@ -41,7 +41,6 @@ apiRequest.onreadystatechange = () => {
         let clickedMediaId = 0;
         let lightboxMedia = 0;
         
-        
         //loop to detect current photographer page & data
         for (i=0; i<photographersData.length; i++){
             if (profilId.textContent == photographersData[i].id){
@@ -182,8 +181,7 @@ apiRequest.onreadystatechange = () => {
                 newLikeSection.appendChild(newMediaLikeCount);
                 newLikeSection.appendChild(newMediaLikeIcon);
 
-                //generate a total number of likes of all media items
-                totalNumberOfLikes += mediaArray[x].likes;
+                
 
                 //Add functionality to Like button for each media item
                 newMediaLikeIcon.addEventListener("click", () => {
@@ -195,6 +193,12 @@ apiRequest.onreadystatechange = () => {
                 
             }  
        }
+
+       //generate a total number of likes of all media items
+       for (i=0; i<currentPhotographerMedia.length; i++){
+           totalNumberOfLikes += currentPhotographerMedia[i].likes;
+       }
+       
 
        //function call to load initial media
        loadMedia(currentPhotographerMedia);
