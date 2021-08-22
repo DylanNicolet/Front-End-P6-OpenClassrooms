@@ -48,9 +48,38 @@ body {
   }
 }
 
+#modal-form__send-button {
+  background-color: #901c1c;
+  color: #fafafa;
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 5px;
+  border-width: 0px;
+  height: 40px;
+  width: 170px;
+  font-size: 1.2em;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#modal-form__close-button {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 30px;
+  color: #fafafa;
+}
+
 .button-style {
   background-color: #901c1c;
-  color: white;
+  color: #fafafa;
   font-family: 'DM Sans', sans-serif;
   border-radius: 5px;
   border-width: 0px;
@@ -180,56 +209,49 @@ body {
 }
 
 #modal-form {
-  width: 100%;
+  width: 90%;
   height: 100%;
+  margin: 0px;
   border-style: none;
   background-color: #DB8876;
+  position: relative;
 }
 
 #modal-form__bg {
   width: 100vw;
   height: 100vh;
-  background-color: greenyellow;
+  background-color: #DB8876;
   position: fixed;
   top: 0px;
   left: 0px;
 }
 
-#modal-form__send-button {
-  width: 200px;
-  height: 30px;
+#modal-form__title {
+  font-weight: 400;
+  font-size: 2em;
+  margin-top: 0px;
 }
 
-#first-name__input {
-  width: 90%;
+#modal-form label {
+  font-size: 1.2em;
+}
+
+#modal-form input {
+  width: 100%;
   height: 40px;
   margin: 5px 0px 10px 0px;
   border-radius: 5px;
   border-style: none;
+  font-size: 1.2em;
 }
 
-#last-name__input {
-  width: 90%;
-  height: 40px;
-  margin: 5px 0px 10px 0px;
-  border-radius: 5px;
-  border-style: none;
-}
-
-#email__input {
-  width: 90%;
-  height: 40px;
-  margin: 5px 0px 10px 0px;
-  border-radius: 5px;
-  border-style: none;
-}
-
-#message__input {
-  width: 90%;
+#modal-form textarea {
+  width: 100%;
   height: 150px;
   margin: 5px 0px 10px 0px;
   border-radius: 5px;
   border-style: none;
+  font-size: 1.2em;
 }
 
 #homepage-header {

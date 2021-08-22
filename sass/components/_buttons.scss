@@ -16,9 +16,34 @@
     }
 }
 
+#modal-form{
+    &__send-button{
+        background-color: $color-primary;
+        color: $color-tertiary;
+        font-family: 'DM Sans', sans-serif;
+        border-radius: 5px;
+        border-width: 0px;
+        height: 40px;
+        width: 170px;
+        font-size: 1.2em;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__close-button{
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        font-size: 30px;
+        color: $color-tertiary;
+    }
+}
+
 .button-style{
     background-color: $color-primary;
-    color: white;
+    color: $color-tertiary;
     font-family: 'DM Sans', sans-serif;
     border-radius: 5px;
     border-width: 0px;
