@@ -1,40 +1,65 @@
 #lightbox{
-    position: fixed;
-    top: 0vh;
-    left: 0vw;
-    width: 100vw;
-    height: 100vh;
+    position: relative;
     background-color: white;
     border-style: none;
-    flex-wrap: wrap;
     margin: 0px;
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    
+    &-bg{
+        align-items: center;
+        position: fixed;
+        top: 0vh;
+        left: 0vw;
+        width: 100vw;
+        height: 100vh;
+        background-color: $color-tertiary;
+    }
 
     &__media{
-        width: 90%;
-        height: auto;
-        object-fit: contain;
+        width: 85vw;
+        height: 75vw;
+        object-fit: cover;
+        border-radius: 5px;
     }
 
     &__media-container{
-        width: 90%;
+        width: 85vw;
+        height: 75vw;
         display: flex;
         justify-content: center;
         height: auto;
     }
 
+    &__previous-btn{
+        margin-left: 4vw;
+        margin-right: 4px;
+    }
+
+    &__next-btn{
+        margin-left: 4px;
+    }
+
     /*includes close button & next button*/
     &__close-next-btn{
-        position: relative;
         display: flex;
         flex: 1;
         justify-content: space-between;
         flex-direction: column;
     }
 
+    &__close-btn{
+        position: absolute;
+        top: 0px;
+        right: 3vw;
+    }
+
     &__title{
+        margin: 10px 0px 10px 8vw;
+        color: $color-primary;
+        font-size: 1.2em;
     }
 }
 

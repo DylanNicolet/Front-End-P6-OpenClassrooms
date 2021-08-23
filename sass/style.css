@@ -121,38 +121,45 @@ body {
 }
 
 #lightbox {
-  position: fixed;
-  top: 0vh;
-  left: 0vw;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
   background-color: white;
   border-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   /*includes close button & next button*/
 }
 
+#lightbox-bg {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafa;
+}
+
 #lightbox__media {
-  width: 90%;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: 85vw;
+  height: 75vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
 }
 
 #lightbox__media-container {
-  width: 90%;
+  width: 85vw;
+  height: 75vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,8 +169,16 @@ body {
   height: auto;
 }
 
+#lightbox__previous-btn {
+  margin-left: 4vw;
+  margin-right: 4px;
+}
+
+#lightbox__next-btn {
+  margin-left: 4px;
+}
+
 #lightbox__close-next-btn {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,6 +192,18 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#lightbox__close-btn {
+  position: absolute;
+  top: 0px;
+  right: 3vw;
+}
+
+#lightbox__title {
+  margin: 10px 0px 10px 8vw;
+  color: #901c1c;
+  font-size: 1.2em;
 }
 
 .lightbox--openned {

@@ -15,6 +15,7 @@ const filterTitle = document.getElementById("select-menu__title");
 const mediaSection = document.getElementById("media-section-id");
 const totalLikesSection = document.getElementById("total-likes-id");
 const likeAndIcon = document.getElementById("like-and-icon");
+const lightboxBg = document.getElementById("lightbox-bg");
 const lightBox = document.getElementById("lightbox");
 const lightBoxMediaContainer = document.getElementById('lightbox__media-container');
 const lightBoxCloseAndNext = document.getElementById("lightbox__close-next-btn");
@@ -115,8 +116,9 @@ apiRequest.onreadystatechange = () => {
                     
                     //add functionality to open lightbox-modal
                     newImgLink.addEventListener("click", ($event) => {
-                        lightBox.classList.remove("lightbox--closed");
-                        lightBox.setAttribute("class", "lightbox--openned");
+                        lightboxBg.classList.remove("lightbox--closed");
+                        lightboxBg.setAttribute("class", "lightbox--openned");
+                        lightBox.setAttribute("open", "");
                         lightBoxMediaContainer.innerHTML = "";
                         clickedMediaId = $event.path[0].id;
                         lightboxMedia = document.createElement('img');
@@ -146,8 +148,9 @@ apiRequest.onreadystatechange = () => {
 
                     //add functionality to open lightbox-modal
                     newVideoLink.addEventListener("click", ($event) => {
-                        lightBox.classList.remove("lightbox--closed");
-                        lightBox.setAttribute("class", "lightbox--openned");
+                        lightboxBg.classList.remove("lightbox--closed");
+                        lightboxBg.setAttribute("class", "lightbox--openned");
+                        lightBox.setAttribute("open", "");
                         lightBoxMediaContainer.innerHTML = "";
                         clickedMediaId = $event.path[0].id;
                         lightboxMedia = document.createElement('video');
@@ -271,8 +274,9 @@ apiRequest.onreadystatechange = () => {
 
         //lightbox close-btn
         lightBoxCloseBtn.addEventListener("click", () => {
-            lightBox.classList.remove("lightbox--openned");
-            lightBox.classList.add("lightbox--closed");
+            lightboxBg.classList.remove("lightbox--openned");
+            lightboxBg.classList.add("lightbox--closed");
+            lightBox.removeAttribute("open");
         });
 
         //lightbox backward arrow functionality
