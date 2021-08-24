@@ -1,5 +1,6 @@
 //DOM elements
 const modalFormBackground = document.getElementById("modal-form__bg");
+const modalForm = document.getElementById("modal-form");
 const firstNameInput = document.getElementById("first-name__input");
 const lastNameInput = document.getElementById("last-name__input");
 const emailInput = document.getElementById("email__input");
@@ -11,6 +12,7 @@ const ModalFormCloseButton = document.getElementById("modal-form__close-button")
 contactButton.addEventListener("click", () => {
     modalFormBackground.classList.remove("modal-form--closed");
     modalFormBackground.classList.add("modal-form--openned");
+    modalForm.setAttribute("open", "");
 })
 
 
@@ -63,4 +65,5 @@ sendButton.addEventListener("click", () => {
 ModalFormCloseButton.addEventListener("click", () => {
     modalFormBackground.classList.remove("modal-form--openned");
     modalFormBackground.classList.add("modal-form--closed");
-})//does not work
+    modalForm.removeAttribute("open");
+})

@@ -61,12 +61,21 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media only screen and (min-width: 1260px) {
+  #modal-form__send-button {
+    display: inline-block;
+    margin: 0px auto;
+    width: 100px;
+    font-size: 1em;
+  }
 }
 
 #modal-form__close-button {
@@ -122,7 +131,7 @@ body {
 
 #lightbox {
   position: relative;
-  background-color: white;
+  background-color: #fafafa;
   border-style: none;
   margin: 0px;
   padding: 0px;
@@ -137,6 +146,12 @@ body {
   /*includes close button & next button*/
 }
 
+@media only screen and (min-width: 1260px) {
+  #lightbox {
+    width: 100vh;
+  }
+}
+
 #lightbox-bg {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -149,12 +164,27 @@ body {
   background-color: #fafafa;
 }
 
+@media only screen and (min-width: 1260px) {
+  #lightbox-bg {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 #lightbox__media {
   width: 85vw;
   height: 75vw;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
+}
+
+@media only screen and (min-width: 1260px) {
+  #lightbox__media {
+    height: 80vh;
+    width: 80vh;
+  }
 }
 
 #lightbox__media-container {
@@ -169,13 +199,36 @@ body {
   height: auto;
 }
 
+@media only screen and (min-width: 1260px) {
+  #lightbox__media-container {
+    height: 80vh;
+    width: 80vh;
+  }
+}
+
 #lightbox__previous-btn {
   margin-left: 4vw;
   margin-right: 4px;
+  color: #901c1c;
+}
+
+@media only screen and (min-width: 1260px) {
+  #lightbox__previous-btn {
+    font-size: 25px;
+    margin-right: 10px;
+  }
 }
 
 #lightbox__next-btn {
   margin-left: 4px;
+  color: #901c1c;
+}
+
+@media only screen and (min-width: 1260px) {
+  #lightbox__next-btn {
+    font-size: 25px;
+    margin-left: 10px;
+  }
 }
 
 #lightbox__close-next-btn {
@@ -198,12 +251,28 @@ body {
   position: absolute;
   top: 0px;
   right: 3vw;
+  color: #901c1c;
+}
+
+@media only screen and (min-width: 1260px) {
+  #lightbox__close-btn {
+    font-size: 25px;
+    right: 3vh;
+  }
 }
 
 #lightbox__title {
   margin: 10px 0px 10px 8vw;
   color: #901c1c;
   font-size: 1.2em;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+@media only screen and (min-width: 1260px) {
+  #lightbox__title {
+    margin: 10px 0px 10px 10.4vh;
+  }
 }
 
 .lightbox--openned {
@@ -214,11 +283,6 @@ body {
 
 .lightbox--closed {
   display: none;
-}
-
-/*close btn*/
-.fa-times {
-  color: #901c1c;
 }
 
 .modal-form--closed {
@@ -244,6 +308,13 @@ body {
   position: relative;
 }
 
+@media only screen and (min-width: 1260px) {
+  #modal-form {
+    width: 350px;
+    height: 500px;
+  }
+}
+
 #modal-form__bg {
   width: 100vw;
   height: 100vh;
@@ -251,6 +322,21 @@ body {
   position: fixed;
   top: 0px;
   left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 1260px) {
+  #modal-form__bg {
+    background-color: rgba(196, 196, 196, 0.4);
+  }
 }
 
 #modal-form__title {
@@ -259,8 +345,20 @@ body {
   margin-top: 0px;
 }
 
+@media only screen and (min-width: 1260px) {
+  #modal-form__title {
+    font-size: 1.7em;
+  }
+}
+
 #modal-form label {
   font-size: 1.2em;
+}
+
+@media only screen and (min-width: 1260px) {
+  #modal-form label {
+    font-size: 1em;
+  }
 }
 
 #modal-form input {
@@ -270,6 +368,17 @@ body {
   border-radius: 5px;
   border-style: none;
   font-size: 1.2em;
+  font-family: 'DM Sans', sans-serif;
+}
+
+@media only screen and (min-width: 1260px) {
+  #modal-form input {
+    font-size: 1em;
+    height: 1.5em;
+    margin: 5px 0px 5px 0px;
+    border-radius: 3px;
+    height: 35px;
+  }
 }
 
 #modal-form textarea {
@@ -279,6 +388,14 @@ body {
   border-radius: 5px;
   border-style: none;
   font-size: 1.2em;
+  font-family: 'DM Sans', sans-serif;
+}
+
+@media only screen and (min-width: 1260px) {
+  #modal-form textarea {
+    font-size: 1em;
+    height: 120px;
+  }
 }
 
 #homepage-header {

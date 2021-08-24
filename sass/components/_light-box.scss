@@ -1,12 +1,16 @@
 #lightbox{
     position: relative;
-    background-color: white;
+    background-color:  $color-tertiary;
     border-style: none;
     margin: 0px;
     padding: 0px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    @include desktop-only{
+        width: 100vh;
+    }
     
     &-bg{
         align-items: center;
@@ -16,6 +20,10 @@
         width: 100vw;
         height: 100vh;
         background-color: $color-tertiary;
+
+        @include desktop-only{
+            justify-content: center;
+        }
     }
 
     &__media{
@@ -23,6 +31,11 @@
         height: 75vw;
         object-fit: cover;
         border-radius: 5px;
+
+        @include desktop-only{
+            height: 80vh;
+            width: 80vh;
+        }
     }
 
     &__media-container{
@@ -31,15 +44,32 @@
         display: flex;
         justify-content: center;
         height: auto;
+        
+        @include desktop-only{
+            height: 80vh;
+            width: 80vh;
+        }
     }
 
     &__previous-btn{
         margin-left: 4vw;
         margin-right: 4px;
+        color: $color-primary;
+
+        @include desktop-only{
+            font-size: 25px;
+            margin-right: 10px;
+        }
     }
 
     &__next-btn{
         margin-left: 4px;
+        color: $color-primary;
+
+         @include desktop-only{
+            font-size: 25px;
+            margin-left: 10px;
+        }
     }
 
     /*includes close button & next button*/
@@ -54,12 +84,23 @@
         position: absolute;
         top: 0px;
         right: 3vw;
+        color: $color-primary;
+
+        @include desktop-only{
+            font-size: 25px;
+            right: 3vh;
+        }
     }
 
     &__title{
         margin: 10px 0px 10px 8vw;
         color: $color-primary;
         font-size: 1.2em;
+        flex-basis: 100%;
+
+        @include desktop-only{
+            margin: 10px 0px 10px 10.4vh;
+        }
     }
 }
 
@@ -69,9 +110,4 @@
 
 .lightbox--closed{
     display: none;
-}
-
-/*close btn*/
-.fa-times{
-    color: $color-primary;
 }

@@ -71,9 +71,8 @@
             </dialog>
         </section>
 
-
-        <section id="modal-form__bg" class="modal-form--closed">
-            <dialog id="modal-form"> <!--add & remove open attr-->
+        <section id="modal-form__bg" class="modal-form--openned">
+            <dialog id="modal-form" open> <!--add & remove open attr-->
                 <h1 id="modal-form__title">Contact me <br> Mimi Keel</h1><!--add photographers name here-->
                 <label for="first-name__input" id="first-name__label">First name</label>
                 <input type="text" id="first-name__input">
@@ -82,7 +81,7 @@
                 <label for="email__input" id="email__label">Email</label>
                 <input type="text" id="email__input">
                 <label for="message__input" id="message__label">Your message</label>
-                <textarea id="message__input"></textarea>
+                <textarea id="message__input" required></textarea>
                 <button id="modal-form__send-button" type="submit">Send</button>
                 <i id="modal-form__close-button" class="fas fa-times"></i>
             </dialog>
