@@ -39,14 +39,23 @@ sendButton.addEventListener("click", () => {
     if(!validateFirstName()){
         firstNameInput.classList.add("invalid-data");
         firstNameInput.value = "Please enter a valid first name";
+        firstNameInput.addEventListener("click", () => {
+            firstNameInput.value = "";
+        })
     }
     if(!validateLastName()){
         lastNameInput.classList.add("invalid-data");
         lastNameInput.value = "Please enter a valid last name";
+        lastNameInput.addEventListener("click", () => {
+            lastNameInput.value = "";
+        })
     }
     if(!validateEmail()){
         emailInput.classList.add("invalid-data");
         emailInput.value = "Please enter a valid Email adress";
+        emailInput.addEventListener("click", () => {
+            emailInput.value = "";
+        })
     }
 
     //validate all input and close modal-form

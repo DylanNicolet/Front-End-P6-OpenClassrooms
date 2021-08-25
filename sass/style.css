@@ -290,7 +290,9 @@ body {
 }
 
 .modal-form--openned {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .invalid-data {
@@ -302,7 +304,7 @@ body {
 #modal-form {
   width: 90%;
   height: 100%;
-  margin: 0px;
+  margin-top: 30px;
   border-style: none;
   background-color: #DB8876;
   position: relative;
@@ -312,6 +314,7 @@ body {
   #modal-form {
     width: 350px;
     height: 500px;
+    margin-top: auto;
   }
 }
 
@@ -322,9 +325,6 @@ body {
   position: fixed;
   top: 0px;
   left: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
