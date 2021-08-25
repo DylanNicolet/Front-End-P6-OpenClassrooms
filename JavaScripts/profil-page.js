@@ -71,6 +71,7 @@ apiRequest.onreadystatechange = () => {
             newTagLink.textContent = "#" + currentPhotographer.tags[j];
             newTagLink.classList.add("profilpage-tags");
             newTagLink.setAttribute("href", "#");
+            newTagLink.setAttribute("role", "Links");
             profilTagsSection.appendChild(newTagLink);
             const newSpan = document.createElement('span');
             newSpan.textContent = "Tag";

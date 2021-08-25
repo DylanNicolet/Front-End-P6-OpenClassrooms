@@ -13,6 +13,7 @@ contactButton.addEventListener("click", () => {
     modalFormBackground.classList.remove("modal-form--closed");
     modalFormBackground.classList.add("modal-form--openned");
     modalForm.setAttribute("open", "");
+    mainSection.setAttribute("aria-hidden", "true");
 })
 
 
@@ -66,6 +67,7 @@ sendButton.addEventListener("click", () => {
         console.log("User Message: " + messageInput.value);
         modalFormBackground.classList.remove("modal-form--openned");
         modalFormBackground.classList.add("modal-form--closed");
+        mainSection.removeAttribute("aria-hidden");
     }
     
 })
@@ -75,4 +77,5 @@ ModalFormCloseButton.addEventListener("click", () => {
     modalFormBackground.classList.remove("modal-form--openned");
     modalFormBackground.classList.add("modal-form--closed");
     modalForm.removeAttribute("open");
+    mainSection.removeAttribute("aria-hidden");
 })

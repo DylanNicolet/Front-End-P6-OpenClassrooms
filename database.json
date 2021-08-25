@@ -353,7 +353,8 @@
         "tags": ["travel"],
         "likes": 88,
         "date": "2019-02-03",
-        "price": 45
+        "price": 45,
+        "description":"Girl standing on a rock, in front of a wide forest"
       },
       {
         "id": 625025343,
@@ -363,7 +364,8 @@
         "tags": ["travel"],
         "likes": 85,
         "date": "2019-04-03",
-        "price": 45
+        "price": 45,
+        "description":"colorful and dence village, built on a hill side by the sea"
       },
       {
         "id": 2525345343,
@@ -373,7 +375,8 @@
         "tags": ["portrait"],
         "likes": 34,
         "date": "2019-04-07",
-        "price": 45
+        "price": 45,
+        "description":"Portrait of a little girl pulling on her cheeks, in black and white"
       },
       {
         "id": 2523434634,
@@ -383,7 +386,8 @@
         "tags": ["portrait"],
         "likes": 63,
         "date": "2019-04-07",
-        "price": 45
+        "price": 45,
+        "description":""
       },
       {
         "id": 398847109,
@@ -393,7 +397,8 @@
         "tags": ["portrait"],
         "likes": 55,
         "date": "2019-06-20",
-        "price": 45
+        "price": 45,
+        "description":"Young woman in front of a very dark background, in black and white"
       },
       {
         "id": 2534342,
@@ -403,7 +408,8 @@
         "tags": ["events"],
         "likes": 25,
         "date": "2019-06-21",
-        "price": 45
+        "price": 45,
+        "description":"Long wedding table on a beach"
       },
       {
         "id": 65235234,
@@ -413,7 +419,8 @@
         "tags": ["events"],
         "likes": 52,
         "date": "2019-06-25",
-        "price": 45
+        "price": 45,
+        "description":"Couple in wedding attire with boulders in the background"
       },
       {
         "id": 23523434,
@@ -423,7 +430,8 @@
         "tags": ["events"],
         "likes": 77,
         "date": "2019-06-28",
-        "price": 45
+        "price": 45,
+        "description":"Couple in wedding attire with the wedding venue in the background"
       },
       {
         "id": 5234343,
@@ -433,7 +441,8 @@
         "tags": ["animals"],
         "likes": 142,
         "date": "2019-08-23",
-        "price": 60
+        "price": 60,
+        "description":"A lot of wild horses galloping by a mountain side"
       },
       {
         "id": 95234343,
@@ -443,7 +452,8 @@
         "tags": ["animals"],
         "likes": 59,
         "date": "2019-07-02",
-        "price": 60
+        "price": 60,
+        "description":"beautiful multicolored bird resting on a branch"
       },
   
       {

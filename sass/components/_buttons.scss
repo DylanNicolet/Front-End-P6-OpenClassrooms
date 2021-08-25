@@ -7,6 +7,12 @@
     left: 0;
     right: 0;
     text-align: center;
+    cursor: pointer;
+
+    &:hover, &:focus{
+        background-color: $color-secondary;
+        color: black;
+    }
 
     @include desktop-only{
         position: initial;
