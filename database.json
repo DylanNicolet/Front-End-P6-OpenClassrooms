@@ -70,7 +70,8 @@
         "tags": ["fashion"],
         "likes": 62,
         "date": "2011-12-08",
-        "price": 55
+        "price": 55,
+        "description": "woman wearing yellow fashion cloths, with a beach in the background"
       },
       {
         "id": 8520927,
@@ -80,7 +81,8 @@
         "tags": ["fashion"],
         "likes": 11,
         "date": "2011-11-06",
-        "price": 55
+        "price": 55,
+        "description": "woman wearing jungle styled clothing, in an urban setting"
       },
       {
         "id": 9025895,
@@ -90,7 +92,8 @@
         "tags": ["fashion"],
         "likes": 72,
         "date": "2013-08-12",
-        "price": 55
+        "price": 55,
+        "description": "woman wearing straight line patterns in from of a square pattern covered wall"
       },
       {
         "id": 9275938,
@@ -100,7 +103,8 @@
         "tags": ["events"],
         "likes": 69,
         "date": "2018-02-22",
-        "price": 55
+        "price": 55,
+        "description": "Beautifully decorated Gazebo for a wedding"
       },
       {
         "id": 2053494,
@@ -110,7 +114,8 @@
         "tags": ["events"],
         "likes": 2,
         "date": "2020-05-25",
-        "price": 55
+        "price": 55,
+        "description": "Many people holding fire sparklers"
       },
       {
         "id": 7324238,
@@ -120,7 +125,8 @@
         "tags": ["events"],
         "likes": 33,
         "date": "2019-06-12",
-        "price": 55
+        "price": 55,
+        "description": "Classy dinner room prepared for an 18th anniversary celebration"
       },
       {
         "id": 8328953,
@@ -130,7 +136,8 @@
         "tags": ["art"],
         "likes": 24,
         "date": "2011-12-08",
-        "price": 100
+        "price": 100,
+        "description": "Sculpture of a horse made of wood"
       },
       {
         "id": 7502053,
@@ -140,7 +147,8 @@
         "tags": ["art"],
         "likes": 88,
         "date": "2007-05-07",
-        "price": 55
+        "price": 55,
+        "description": "Painting of a man looking up with a white triangle in front"
       },
       {
         "id": 8523492,
@@ -150,7 +158,8 @@
         "tags": ["art"],
         "likes": 24,
         "date": "2018-05-05",
-        "price": 55
+        "price": 55,
+        "description": "Subway tunnel filled with graffiti, with purple lighting"
       },
       {
         "id": 75902334,
@@ -160,7 +169,8 @@
         "tags": ["art"],
         "likes": 75,
         "date": "2019-11-25",
-        "price": 55
+        "price": 55,
+        "description": "painting of multiple red and blue pigeon heads"
       },
   
       {
@@ -171,7 +181,8 @@
         "tags": ["sport"],
         "likes": 52,
         "date": "2013-02-30",
-        "price": 70
+        "price": 70,
+        "description": "Bird-eye view of a rowing team on very dark waters"
       },
       {
         "id": 92758372,
@@ -181,7 +192,8 @@
         "tags": ["fashion"],
         "likes": 58,
         "date": "2018-07-17",
-        "price": 70
+        "price": 70,
+        "description": "Dark-skinned woman wearing a blue dress, in front of a pale-skinned man wearing a white suit"
       },
       {
         "id": 32958383,
@@ -191,7 +203,8 @@
         "tags": ["fashion"],
         "likes": 11,
         "date": "2019-08-12",
-        "price": 70
+        "price": 70,
+        "description": "Woman spreading her red dress wide while walking down stairs"
       },
       {
         "id": 928587383,
@@ -201,7 +214,8 @@
         "tags": ["events"],
         "likes": 2,
         "date": "2019-01-02",
-        "price": 70
+        "price": 70,
+        "description": "On-going work meeting with a woman presenting"
       },
       {
         "id": 725639493,
@@ -211,7 +225,8 @@
         "tags": ["events"],
         "likes": 3,
         "date": "2019-05-20",
-        "price": 70
+        "price": 70,
+        "description": "Man presenting a product to some seated people"
       },
       {
         "id": 23394384,
@@ -221,7 +236,8 @@
         "tags": ["events"],
         "likes": 52,
         "date": "2019-07-18",
-        "price": 70
+        "price": 70,
+        "description": "Woman playing the keyboard, in black and white"
       },
       {
         "id": 87367293,
@@ -231,7 +247,8 @@
         "tags": ["events"],
         "likes": 23,
         "date": "2018-02-22",
-        "price": 70
+        "price": 70,
+        "description": "Singer holding a microphone and wearing a gold and white attire"
       },
       {
         "id": 593834784,
@@ -241,7 +258,8 @@
         "tags": ["animals"],
         "likes": 52,
         "date": "2017-03-13",
-        "price": 70
+        "price": 70,
+        "description": "Majestic dear looking straight in the camera"
       },
       {
         "id": 83958935,
@@ -251,7 +269,8 @@
         "tags": ["animals"],
         "likes": 52,
         "date": "2016-06-12",
-        "price": 70
+        "price": 70,
+        "description": "Puppy at the beach, fighting against the leash"
       },
   
       {
@@ -262,7 +281,8 @@
         "tags": ["travel"],
         "likes": 23,
         "date": "2017-03-18",
-        "price": 45
+        "price": 45,
+        "description": "Rocky mountain top with grass on one side only"
       },
       {
         "id": 343423425,
@@ -272,7 +292,8 @@
         "tags": ["travel"],
         "likes": 101,
         "date": "2017-04-03",
-        "price": 45
+        "price": 45,
+        "description": "Blue steaming outdoor natural baths"
       },
       {
         "id": 73434243,
@@ -282,7 +303,8 @@
         "tags": ["travel"],
         "likes": 99,
         "date": "2018-04-30",
-        "price": 45
+        "price": 45,
+        "description": "long curvy country road, surrounded by hills"
       },
       {
         "id": 23425523,
@@ -292,7 +314,8 @@
         "tags": ["travel"],
         "likes": 34,
         "date": "2016-04-05",
-        "price": 45
+        "price": 45,
+        "description": "Metal bridge leading into a dense green forest"
       },
       {
         "id": 23134513,
@@ -302,7 +325,8 @@
         "tags": ["travel"],
         "likes": 23,
         "date": "2017-03-18",
-        "price": 45
+        "price": 45,
+        "description": "Wooden boat on lake, with rocky maintains in the background"
       },
       {
         "id": 92352352,
@@ -312,7 +336,8 @@
         "tags": ["portrait"],
         "likes": 66,
         "date": "2018-05-24",
-        "price": 45
+        "price": 45,
+        "description": "Bright portrait of a smilling girl"
       },
       {
         "id": 34513453,
@@ -322,7 +347,8 @@
         "tags": ["portrait"],
         "likes": 52,
         "date": "2017-04-21",
-        "price": 45
+        "price": 45,
+        "description": "Very dark, black and white portrait of a man facing right"
       },
       {
         "id": 23523533,
@@ -332,7 +358,8 @@
         "tags": ["portrait"],
         "likes": 95,
         "date": "2018-11-02",
-        "price": 45
+        "price": 45,
+        "description": "Black and white portrait of a girl with white hair"
       },
       {
         "id": 525834234,
@@ -342,7 +369,8 @@
         "tags": ["portrait"],
         "likes": 25,
         "date": "2019-01-02",
-        "price": 45
+        "price": 45,
+        "description": "Black and white portrait of an aged man holding a cigarette"
       },
   
       {
@@ -387,7 +415,7 @@
         "likes": 63,
         "date": "2019-04-07",
         "price": 45,
-        "description":""
+        "description":"Portrait of a very dark-skinned girl with bright neons in the background"
       },
       {
         "id": 398847109,
@@ -464,7 +492,8 @@
         "tags": ["travel"],
         "likes": 25,
         "date": "2019-04-03",
-        "price": 60
+        "price": 60,
+        "description": "Old style japanese town in front of a huge tower"
       },
       {
         "id": 2523434,
@@ -474,7 +503,8 @@
         "tags": ["travel"],
         "likes": 53,
         "date": "2019-05-06",
-        "price": 60
+        "price": 60,
+        "description": "Sunset at the canals surrounded by buildings"
       },
       {
         "id": 95293534,
@@ -484,7 +514,8 @@
         "tags": ["travel"],
         "likes": 33,
         "date": "2019-05-12",
-        "price": 60
+        "price": 60,
+        "description": "beautiful wild lake surrounded by mountains"
       },
       {
         "id": 356234343,
@@ -494,7 +525,8 @@
         "tags": ["travel"],
         "likes": 53,
         "date": "2019-06-20",
-        "price": 60
+        "price": 60,
+        "description": "Bicycle leaning against stairs with old style building in the background"
       },
       {
         "id": 235234343,
@@ -504,7 +536,8 @@
         "tags": ["travel"],
         "likes": 63,
         "date": "2019-06-26",
-        "price": 60
+        "price": 60,
+        "description": "outside view from inside of an old indian building"
       },
       {
         "id": 6234234343,
@@ -514,7 +547,8 @@
         "tags": ["architecture"],
         "likes": 52,
         "date": "2019-06-30",
-        "price": 60
+        "price": 60,
+        "description": "Building with spherical top covered with gold accents and the sky as a background contrast"
       },
       {
         "id": 6525666253,
@@ -524,7 +558,8 @@
         "tags": ["architecture"],
         "likes": 63,
         "date": "2019-07-20",
-        "price": 60
+        "price": 60,
+        "description": "Small town fully covering a hill"
       },
       {
         "id": 98252523433,
@@ -534,7 +569,8 @@
         "tags": ["architecture"],
         "likes": 88,
         "date": "2020-01-05",
-        "price": 60
+        "price": 60,
+        "description": "Very close view of a leaning roman style tower"
       },
       {
         "id": 9259398453,
@@ -544,7 +580,8 @@
         "tags": ["architecture"],
         "likes": 57,
         "date": "2020-01-20",
-        "price": 65
+        "price": 65,
+        "description": "Circular highway exchange leading into a very dence city area"
       },
       {
         "id": 3523523534,
@@ -554,7 +591,8 @@
         "tags": ["architecture"],
         "likes": 54,
         "date": "2020-05-05",
-        "price": 60
+        "price": 60,
+        "description": "Corner of a red and black building with the sky as background"
       },
   
       {
@@ -565,7 +603,8 @@
         "tags": ["sport"],
         "likes": 150,
         "date": "2018-02-30",
-        "price": 70
+        "price": 70,
+        "description": "Gymnaste doing tricks hanging in the air"
       },
       {
         "id": 235234343,
@@ -575,7 +614,8 @@
         "tags": ["sport"],
         "likes": 101,
         "date": "2018-03-05",
-        "price": 65
+        "price": 65,
+        "description": "Rock climber working her way up a rock wall"
       },
       {
         "id": 235343222,
@@ -585,7 +625,8 @@
         "tags": ["sport"],
         "likes": 103,
         "date": "2018-03-10",
-        "price": 70
+        "price": 70,
+        "description": "Surfer riding a water tunnel"
       },
       {
         "id": 7775342343,
@@ -595,7 +636,8 @@
         "tags": ["sport"],
         "likes": 77,
         "date": "2018-04-16",
-        "price": 50
+        "price": 50,
+        "description": "Skier making a cross mid-air with his skis"
       },
       {
         "id": 9253445784,
@@ -605,7 +647,8 @@
         "tags": ["sport"],
         "likes": 88,
         "date": "2018-04-22",
-        "price": 65
+        "price": 65,
+        "description": "Female sprinters nealy reaching the end line"
       },
       {
         "id": 22299394,
@@ -615,7 +658,8 @@
         "tags": ["sport"],
         "likes": 95,
         "date": "2018-04-27",
-        "price": 70
+        "price": 70,
+        "description": "Skateboarder doign a trick mid-air"
       },
       {
         "id": 3452342633,
@@ -625,7 +669,8 @@
         "tags": ["architecture"],
         "likes": 52,
         "date": "2018-05-03",
-        "price": 75
+        "price": 75,
+        "description": "center of a spiral building with all white paint and light"
       },
       {
         "id": 939234243,
@@ -635,7 +680,8 @@
         "tags": ["architecture"],
         "likes": 55,
         "date": "2018-05-10",
-        "price": 72
+        "price": 72,
+        "description": "Modern building that ressembles a sand dune with water in front"
       },
       {
         "id": 222959233,
@@ -645,7 +691,8 @@
         "tags": ["architecture"],
         "likes": 85,
         "date": "2018-05-15",
-        "price": 71
+        "price": 71,
+        "description": "Curvy building that looks like a horse shoes from this angle"
       },
       {
         "id": 965933434,
@@ -655,7 +702,8 @@
         "tags": ["architecture"],
         "likes": 66,
         "date": "2018-05-20",
-        "price": 58
+        "price": 58,
+        "description": "Very square and straight building made of slightly tinted glass"
       },
       {
         "id": 777723343,
@@ -665,7 +713,8 @@
         "tags": ["architecture"],
         "likes": 79,
         "date": "2018-05-21",
-        "price": 80
+        "price": 80,
+        "description": "modern and curvy buildings connected with curvy bridges"
       }
     ]
   }
