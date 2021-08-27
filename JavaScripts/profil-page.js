@@ -368,5 +368,74 @@ apiRequest.onreadystatechange = () => {
             }
         });
 
+        //navigate lightbox with right-arrow key
+        window.addEventListener("keydown", (e) => {
+            const keyCode = e.keyCode ? e.keyCode : e.which
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 39) {
+                // Escape key pressed
+                let nextMedia = 0;
+                let nextMediaKeys = 0;
+                for(let i=0; i<filteredMediaArray.length; i++){
+                    if(lightBoxTitle.textContent === filteredMediaArray[i].title){
+                        nextMedia = filteredMediaArray[i+1];
+                        nextMediaKeys = Object.keys(filteredMediaArray[i+1]);
+                    }
+                }
+                if(nextMediaKeys.includes("image")){
+                    lightBoxMediaContainer.innerHTML = "";
+                    lightboxMedia = document.createElement('img');
+                    lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + nextMedia.image);
+                    lightboxMedia.setAttribute("alt", nextMedia.description);
+                    lightBoxTitle.textContent = nextMedia.title;
+                    lightboxMedia.setAttribute("id", "lightbox__media");
+                    lightBoxMediaContainer.appendChild(lightboxMedia);
+                }
+                if(nextMediaKeys.includes("video")){
+                    lightBoxMediaContainer.innerHTML = "";
+                    lightboxMedia = document.createElement('video');
+                    lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + nextMedia.video);
+                    lightboxMedia.setAttribute("type", "video/mp4");
+                    lightboxMedia.setAttribute("controls", "");
+                    lightBoxTitle.textContent = nextMedia.title;
+                    lightboxMedia.setAttribute("id", "lightbox__media");
+                    lightBoxMediaContainer.appendChild(lightboxMedia);
+                }
+
+            }
+        });
+
+        //navigate light box with left-arrow key
+        window.addEventListener("keydown", (e) => {
+            const keyCode = e.keyCode ? e.keyCode : e.which
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 37) {
+                let previousMedia = 0;
+                let previousMediaKeys = 0;
+                for(let i=0; i<filteredMediaArray.length; i++){
+                    if(lightBoxTitle.textContent === filteredMediaArray[i].title){
+                        previousMedia = filteredMediaArray[i-1];
+                        previousMediaKeys = Object.keys(filteredMediaArray[i-1]);
+                    }
+                }
+                if(previousMediaKeys.includes("image")){
+                    lightBoxMediaContainer.innerHTML = "";
+                    lightboxMedia = document.createElement('img');
+                    lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.image);
+                    lightboxMedia.setAttribute("alt", previousMedia.description);
+                    lightBoxTitle.textContent = previousMedia.title;
+                    lightboxMedia.setAttribute("id", "lightbox__media");
+                    lightBoxMediaContainer.appendChild(lightboxMedia);
+                }
+                if(previousMediaKeys.includes("video")){
+                    lightBoxMediaContainer.innerHTML = "";
+                    lightboxMedia = document.createElement('video');
+                    lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.video);
+                    lightboxMedia.setAttribute("type", "video/mp4");
+                    lightboxMedia.setAttribute("controls", "");
+                    lightBoxTitle.textContent = previousMedia.title;
+                    lightboxMedia.setAttribute("id", "lightbox__media");
+                    lightBoxMediaContainer.appendChild(lightboxMedia);
+                }
+            }
+        });
     }
 }
