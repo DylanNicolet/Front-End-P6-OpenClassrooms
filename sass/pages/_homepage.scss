@@ -11,6 +11,7 @@
         position: absolute;
         top: 55px;
         right: 5%;
+        cursor: default;
     
         @include desktop-only{
             font-size: 1.7em;
@@ -58,17 +59,20 @@
     color: $color-primary;
     font-size: 1em;
     margin: 0px;
+    cursor: default;
 }
 
 .photographer-tagline{
     font-size: 0.8em;
     margin: 5px 0px 0px 0px;
+    cursor: default;
 }
 
 .photographer-price{
     color: $color-font-tertiary;
     font-size: 0.7em;
     margin: 5px 0px 5px 0px;
+    cursor: default;
 }
 
 .profil-navtag{

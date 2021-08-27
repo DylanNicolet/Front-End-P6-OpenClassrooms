@@ -135,6 +135,14 @@ body {
   overflow: hidden;
 }
 
+#select-menu__list button {
+  cursor: pointer;
+}
+
+#select-menu__button {
+  cursor: pointer;
+}
+
 #lightbox {
   position: relative;
   background-color: #fafafa;
@@ -216,6 +224,7 @@ body {
   margin-left: 4vw;
   margin-right: 4px;
   color: #901c1c;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1260px) {
@@ -228,6 +237,7 @@ body {
 #lightbox__next-btn {
   margin-left: 4px;
   color: #901c1c;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1260px) {
@@ -258,6 +268,7 @@ body {
   top: 0px;
   right: 3vw;
   color: #901c1c;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1260px) {
@@ -273,6 +284,7 @@ body {
   font-size: 1.2em;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+  cursor: default;
 }
 
 @media only screen and (min-width: 1260px) {
@@ -531,6 +543,7 @@ header ul {
   position: absolute;
   top: 55px;
   right: 5%;
+  cursor: default;
 }
 
 @media only screen and (min-width: 1260px) {
@@ -586,17 +599,20 @@ header ul {
   color: #901c1c;
   font-size: 1em;
   margin: 0px;
+  cursor: default;
 }
 
 .photographer-tagline {
   font-size: 0.8em;
   margin: 5px 0px 0px 0px;
+  cursor: default;
 }
 
 .photographer-price {
   color: #868686;
   font-size: 0.7em;
   margin: 5px 0px 5px 0px;
+  cursor: default;
 }
 
 .profil-navtag {
@@ -653,6 +669,7 @@ header ul {
   font-weight: 400;
   font-size: 2.6em;
   margin: 15px 0px 0px 0px;
+  cursor: default;
 }
 
 @media only screen and (min-width: 1260px) {
@@ -665,12 +682,14 @@ header ul {
   color: #901c1c;
   font-size: 1em;
   margin: 0px;
+  cursor: default;
 }
 
 .profil-tagline {
   font-size: 0.8em;
   margin: 5px 0px 0px 0px;
   color: #868686;
+  cursor: default;
 }
 
 @media only screen and (min-width: 1260px) {
@@ -769,7 +788,7 @@ header ul {
 @media only screen and (min-width: 1260px) {
   .media-section__card {
     width: 330px;
-    margin-bottom: 30px;
+    margin: auto 20px 30px 20px;
   }
 }
 
@@ -790,6 +809,7 @@ header ul {
 .media-section__title {
   margin: 10px 0px 10px 0px;
   color: #901c1c;
+  cursor: default;
 }
 
 .media-section__likesection {
@@ -805,11 +825,13 @@ header ul {
   margin: 0px 5px 0px 0px;
   color: #901c1c;
   font-weight: 500;
+  cursor: default;
 }
 
 .media-section i {
   color: #901c1c;
   font-size: 15px;
+  cursor: pointer;
 }
 
 #total-likes-id {
@@ -827,6 +849,7 @@ header ul {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  cursor: default;
 }
 
 @media only screen and (min-width: 1260px) {

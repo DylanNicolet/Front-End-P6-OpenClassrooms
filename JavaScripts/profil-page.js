@@ -110,6 +110,7 @@ apiRequest.onreadystatechange = () => {
                     newImgLink.setAttribute("href", "#");
                     const newImg = document.createElement('img');
                     newImg.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].image);
+                    newImg.setAttribute("alt", mediaArray[x].description);
                     newImg.setAttribute("class", "media-section__media");
                     newImg.setAttribute("id", mediaArray[x].id);
                     newMediaCard.appendChild(newImgLink);
@@ -128,6 +129,7 @@ apiRequest.onreadystatechange = () => {
                             if (clickedMediaId == currentPhotographerMedia[i].id){
                                 lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].image);
                                 lightBoxTitle.textContent = currentPhotographerMedia[i].title;
+                                lightboxMedia.setAttribute("alt", currentPhotographerMedia[i].description);
                             }
                         }
                         lightboxMedia.setAttribute("id", "lightbox__media");
@@ -294,6 +296,7 @@ apiRequest.onreadystatechange = () => {
                 lightBoxMediaContainer.innerHTML = "";
                 lightboxMedia = document.createElement('img');
                 lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.image);
+                lightboxMedia.setAttribute("alt", previousMedia.description);
                 lightBoxTitle.textContent = previousMedia.title;
                 lightboxMedia.setAttribute("id", "lightbox__media");
                 lightBoxMediaContainer.appendChild(lightboxMedia);
@@ -324,6 +327,7 @@ apiRequest.onreadystatechange = () => {
                 lightBoxMediaContainer.innerHTML = "";
                 lightboxMedia = document.createElement('img');
                 lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + nextMedia.image);
+                lightboxMedia.setAttribute("alt", nextMedia.description);
                 lightBoxTitle.textContent = nextMedia.title;
                 lightboxMedia.setAttribute("id", "lightbox__media");
                 lightBoxMediaContainer.appendChild(lightboxMedia);

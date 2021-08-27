@@ -22,5 +22,13 @@
         background-color: $color-primary;
         border-radius: 3px;
         overflow: hidden;
+
+        button{
+            cursor: pointer;
+        }
+    }
+
+    &__button{
+        cursor: pointer;
     }
 }
