@@ -10,10 +10,12 @@ const ModalFormCloseButton = document.getElementById("modal-form__close-button")
 
 //open modal form
 contactButton.addEventListener("click", () => {
+    mainSection.setAttribute("aria-hidden", "true");
+    modalFormBackground.setAttribute("aria-hidden", "false");
     modalFormBackground.classList.remove("modal-form--closed");
     modalFormBackground.classList.add("modal-form--openned");
     modalForm.setAttribute("open", "");
-    mainSection.setAttribute("aria-hidden", "true");
+    body.style.overflow = "hidden";
 })
 
 
@@ -74,8 +76,24 @@ sendButton.addEventListener("click", () => {
 
 //close button functionality
 ModalFormCloseButton.addEventListener("click", () => {
+    mainSection.setAttribute("aria-hidden", "false");
+    modalFormBackground.setAttribute("aria-hidden", "true");
     modalFormBackground.classList.remove("modal-form--openned");
     modalFormBackground.classList.add("modal-form--closed");
     modalForm.removeAttribute("open");
-    mainSection.removeAttribute("aria-hidden");
+    body.style.overflow = "visible";
 })
+
+//close modal-form when escape key is pressed
+window.addEventListener("keydown", (e) => {
+    const keyCode = e.keyCode ? e.keyCode : e.which
+    if (modalFormBackground.getAttribute("aria-hidden") == 'false' && keyCode == 27) {
+        // Escape key pressed
+        mainSection.setAttribute("aria-hidden", "false");
+        modalFormBackground.setAttribute("aria-hidden", "true");
+        modalFormBackground.classList.remove("modal-form--openned");
+        modalFormBackground.classList.add("modal-form--closed");
+        modalForm.removeAttribute("open");
+        body.style.overflow = "visible";
+    }
+});

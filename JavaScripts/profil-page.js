@@ -1,4 +1,5 @@
 //DOM elements
+const body = document.querySelector('body');
 const mainSection = document.getElementById("main");
 const profilId = document.getElementById("profil-id-id");
 const profilName = document.getElementById("profil-name-id");
@@ -118,9 +119,12 @@ apiRequest.onreadystatechange = () => {
                     
                     //add functionality to open lightbox-modal
                     newImgLink.addEventListener("click", ($event) => {
+                        mainSection.setAttribute("aria-hidden", "true");
+                        lightboxBg.setAttribute("aria-hidden", "false");
                         lightboxBg.classList.remove("lightbox--closed");
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
+                        body.style.overflow = "hidden";
                         lightBoxMediaContainer.innerHTML = "";
                         clickedMediaId = $event.path[0].id;
                         lightboxMedia = document.createElement('img');
@@ -151,9 +155,12 @@ apiRequest.onreadystatechange = () => {
 
                     //add functionality to open lightbox-modal
                     newVideoLink.addEventListener("click", ($event) => {
+                        mainSection.setAttribute("aria-hidden", "true");
+                        lightboxBg.setAttribute("aria-hidden", "false");
                         lightboxBg.classList.remove("lightbox--closed");
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
+                        body.style.overflow = "hidden";
                         lightBoxMediaContainer.innerHTML = "";
                         clickedMediaId = $event.path[0].id;
                         lightboxMedia = document.createElement('video');
@@ -277,9 +284,12 @@ apiRequest.onreadystatechange = () => {
 
         //lightbox close-btn
         lightBoxCloseBtn.addEventListener("click", () => {
+            mainSection.setAttribute("aria-hidden", "false");
+            lightboxBg.setAttribute("aria-hidden", "true");
             lightboxBg.classList.remove("lightbox--openned");
             lightboxBg.classList.add("lightbox--closed");
             lightBox.removeAttribute("open");
+            body.style.overflow = "visible";
         });
 
         //lightbox backward arrow functionality
@@ -343,5 +353,20 @@ apiRequest.onreadystatechange = () => {
                 lightBoxMediaContainer.appendChild(lightboxMedia);
             }
         }); 
+
+        // Close lightBox when escape key is pressed
+        window.addEventListener("keydown", (e) => {
+            const keyCode = e.keyCode ? e.keyCode : e.which
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 27) {
+                // Escape key pressed
+                mainSection.setAttribute("aria-hidden", "false");
+                lightboxBg.setAttribute("aria-hidden", "true");
+                lightboxBg.classList.remove("lightbox--openned");
+                lightboxBg.classList.add("lightbox--closed");
+                lightBox.removeAttribute("open");
+                body.style.overflow = "visible";
+            }
+        });
+
     }
 }
