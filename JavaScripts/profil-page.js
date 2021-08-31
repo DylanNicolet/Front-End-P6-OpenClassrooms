@@ -108,7 +108,7 @@ apiRequest.onreadystatechange = () => {
                 //load image media
                 if(keys.includes("image")){
                     const newImgLink = document.createElement('a');
-                    newImgLink.setAttribute("href", "#");
+                    newImgLink.setAttribute("href", "#"); 
                     const newImg = document.createElement('img');
                     newImg.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].image);
                     newImg.setAttribute("alt", mediaArray[x].description);
@@ -116,6 +116,7 @@ apiRequest.onreadystatechange = () => {
                     newImg.setAttribute("id", mediaArray[x].id);
                     newMediaCard.appendChild(newImgLink);
                     newImgLink.appendChild(newImg);
+                    let mediaId = mediaArray[x].id; //to use for lightbox openning
                     
                     //add functionality to open lightbox-modal
                     newImgLink.addEventListener("click", ($event) => {
@@ -126,11 +127,10 @@ apiRequest.onreadystatechange = () => {
                         lightBox.setAttribute("open", "");
                         body.style.overflow = "hidden";
                         lightBoxMediaContainer.innerHTML = "";
-                        clickedMediaId = $event.path[0].id;
                         lightboxMedia = document.createElement('img');
-                        
+
                         for(let i=0; i<currentPhotographerMedia.length; i++){
-                            if (clickedMediaId == currentPhotographerMedia[i].id){
+                            if (mediaId == currentPhotographerMedia[i].id){
                                 lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].image);
                                 lightBoxTitle.textContent = currentPhotographerMedia[i].title;
                                 lightboxMedia.setAttribute("alt", currentPhotographerMedia[i].description);
@@ -152,6 +152,7 @@ apiRequest.onreadystatechange = () => {
                     newVideo.setAttribute("id", mediaArray[x].id);
                     newMediaCard.appendChild(newVideoLink);
                     newVideoLink.appendChild(newVideo);
+                    let mediaId = mediaArray[x].id; //to use for lightbox openning
 
                     //add functionality to open lightbox-modal
                     newVideoLink.addEventListener("click", ($event) => {
@@ -162,11 +163,10 @@ apiRequest.onreadystatechange = () => {
                         lightBox.setAttribute("open", "");
                         body.style.overflow = "hidden";
                         lightBoxMediaContainer.innerHTML = "";
-                        clickedMediaId = $event.path[0].id;
                         lightboxMedia = document.createElement('video');
 
                         for(let i=0; i<currentPhotographerMedia.length; i++){
-                            if (clickedMediaId == currentPhotographerMedia[i].id){
+                            if (mediaId == currentPhotographerMedia[i].id){
                                 lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].video);
                                 lightboxMedia.setAttribute("type", "video/mp4");
                                 lightboxMedia.setAttribute("controls", "");
@@ -202,8 +202,6 @@ apiRequest.onreadystatechange = () => {
                     newTotalLikes.textContent = totalNumberOfLikes;
                     newMediaLikeCount.textContent++
                 });
-
-                
             }  
        }
 
