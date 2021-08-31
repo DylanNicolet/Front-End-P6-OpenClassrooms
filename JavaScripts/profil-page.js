@@ -182,7 +182,7 @@ apiRequest.onreadystatechange = () => {
                 newMediaTitle.textContent = mediaArray[x].title;
                 newMediaLikeCount.textContent = mediaArray[x].likes;
                 newMediaLikeIcon.setAttribute("class", "fas fa-heart");
-                newMediaLikeIcon.setAttribute("href", "#");
+                newMediaLikeIcon.setAttribute("tabindex", "0");             
 
                 newMediaCard.setAttribute("class", "media-section__card");
                 newMediaTitle.setAttribute("class", "media-section__title");
@@ -197,10 +197,19 @@ apiRequest.onreadystatechange = () => {
                 
 
                 //Add functionality to Like button for each media item
-                newMediaLikeIcon.addEventListener("click", () => {
-                    totalNumberOfLikes++
+                newMediaLikeIcon.addEventListener("click", ($event) => {
+                    totalNumberOfLikes++;
                     newTotalLikes.textContent = totalNumberOfLikes;
-                    newMediaLikeCount.textContent++
+                    newMediaLikeCount.textContent++;
+                });
+
+                newMediaLikeIcon.addEventListener("keydown", (e) => {
+                    const keyCode = e.keyCode ? e.keyCode : e.which
+                    if (keyCode == 13) {
+                        totalNumberOfLikes++;
+                        newTotalLikes.textContent = totalNumberOfLikes;
+                        newMediaLikeCount.textContent++;
+                    }
                 });
             }  
        }
