@@ -6,7 +6,7 @@ const lastNameInput = document.getElementById("last-name__input");
 const emailInput = document.getElementById("email__input");
 const messageInput = document.getElementById('message__input');
 const sendButton = document.getElementById("modal-form__send-button");
-const ModalFormCloseButton = document.getElementById("modal-form__close-button")
+const ModalFormCloseButton = document.getElementById("modal-form__close-button");
 
 //open modal form
 contactButton.addEventListener("click", () => {             
@@ -43,6 +43,7 @@ sendButton.addEventListener("click", () => {
     if(!validateFirstName()){
         firstNameInput.classList.add("invalid-data");
         firstNameInput.value = "Please enter a valid first name";
+        firstNameInput.setAttribute("aria-invalid", "true");
         firstNameInput.addEventListener("click", () => {
             firstNameInput.value = "";
         })
@@ -50,6 +51,7 @@ sendButton.addEventListener("click", () => {
     if(!validateLastName()){
         lastNameInput.classList.add("invalid-data");
         lastNameInput.value = "Please enter a valid last name";
+        lastNameInput.setAttribute("aria-invalid", "true");
         lastNameInput.addEventListener("click", () => {
             lastNameInput.value = "";
         })
@@ -57,6 +59,7 @@ sendButton.addEventListener("click", () => {
     if(!validateEmail()){
         emailInput.classList.add("invalid-data");
         emailInput.value = "Please enter a valid Email adress";
+        emailInput.setAttribute("aria-invalid", "true");
         emailInput.addEventListener("click", () => {
             emailInput.value = "";
         })
@@ -71,33 +74,63 @@ sendButton.addEventListener("click", () => {
         modalFormBackground.classList.remove("modal-form--openned");
         modalFormBackground.classList.add("modal-form--closed");
         mainSection.removeAttribute("aria-hidden");
-        mainSection.removeAttribute("tab-index");
+        firstNameInput.setAttribute("aria-invalid", "false");
+        lastNameInput.setAttribute("aria-invalid", "false");
+        emailInput.setAttribute("aria-invalid", "false");
     }
     
 })
 
+//constrain focus inside modal form
+document.addEventListener("keydown", (e) => {
+    let isTabPressed = e.key === "tab" || e.keyCode === 9;
+
+    if(!isTabPressed){
+        return;
+    }
+
+    if(e.shiftKey){
+        if(document.activeElement === ModalFormCloseButton){
+            sendButton.focus();
+            e.preventDefault();
+        }
+    } else {
+        if(document.activeElement === sendButton){
+            ModalFormCloseButton.focus();
+            e.preventDefault();
+        }
+    }
+});
 
 
-//close button functionality
-ModalFormCloseButton.addEventListener("click", () => {
+//function to close modal form
+function closeModalForm() {
     mainSection.setAttribute("aria-hidden", "false");
     modalFormBackground.setAttribute("aria-hidden", "true");
     modalFormBackground.classList.remove("modal-form--openned");
     modalFormBackground.classList.add("modal-form--closed");
-    modalForm.removeAttribute("open");
     body.style.overflow = "visible";
-})
+}
+
+//close button functionality
+ModalFormCloseButton.addEventListener("click", () => {
+    closeModalForm();
+});
+
+//close button with enter key
+ModalFormCloseButton.addEventListener("keydown", (e) => {
+    const keyCode = e.keyCode ? e.keyCode : e.which
+    if (modalFormBackground.getAttribute("aria-hidden") == 'false' && keyCode == 13) {
+        // Escape key pressed
+        closeModalForm();
+    }
+});
 
 //close modal-form when escape key is pressed
 window.addEventListener("keydown", (e) => {
     const keyCode = e.keyCode ? e.keyCode : e.which
     if (modalFormBackground.getAttribute("aria-hidden") == 'false' && keyCode == 27) {
         // Escape key pressed
-        mainSection.setAttribute("aria-hidden", "false");
-        modalFormBackground.setAttribute("aria-hidden", "true");
-        modalFormBackground.classList.remove("modal-form--openned");
-        modalFormBackground.classList.add("modal-form--closed");
-        modalForm.removeAttribute("open");
-        body.style.overflow = "visible";
+        closeModalForm();
     }
 });

@@ -36,6 +36,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
 
         @include desktop-only{
             display: inline-block;
@@ -51,6 +52,7 @@
         right: 15px;
         font-size: 30px;
         color: $color-tertiary;
+        cursor: pointer;
     }
 }
 

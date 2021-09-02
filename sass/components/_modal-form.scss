@@ -46,6 +46,7 @@
         font-weight: 400;
         font-size: 2em;
         margin-top: 0px;
+        cursor: default;
 
         @include desktop-only{
             font-size: 1.7em;

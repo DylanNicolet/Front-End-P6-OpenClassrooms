@@ -126,7 +126,8 @@ apiRequest.onreadystatechange = () => {
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
                         body.style.overflow = "hidden";
-                        lightBoxCloseBtn.focus();
+                        window.setTimeout(() => lightBoxCloseBtn.focus(), 0);
+                        lightBoxCloseBtn.setAttribute("tabindex", "0");
                         lightBoxMediaContainer.innerHTML = "";
                         lightboxMedia = document.createElement('img');
 
