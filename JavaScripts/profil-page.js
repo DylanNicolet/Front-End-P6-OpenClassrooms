@@ -1,5 +1,6 @@
 //DOM elements
 const body = document.querySelector('body');
+const header = document.querySelector('header');
 const mainSection = document.getElementById("main");
 const profilId = document.getElementById("profil-id-id");
 const profilName = document.getElementById("profil-name-id");
@@ -40,7 +41,6 @@ apiRequest.onreadystatechange = () => {
         const media = data.media;
         let currentPhotographer = 0;
         let totalNumberOfLikes = 0;
-        let clickedMediaId = 0;
         let lightboxMedia = 0;
         
         //loop to detect current photographer page & data
@@ -126,6 +126,7 @@ apiRequest.onreadystatechange = () => {
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
                         body.style.overflow = "hidden";
+                        lightBoxCloseBtn.focus();
                         lightBoxMediaContainer.innerHTML = "";
                         lightboxMedia = document.createElement('img');
 
@@ -162,6 +163,7 @@ apiRequest.onreadystatechange = () => {
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
                         body.style.overflow = "hidden";
+                        lightBoxCloseBtn.focus();
                         lightBoxMediaContainer.innerHTML = "";
                         lightboxMedia = document.createElement('video');
 
@@ -197,7 +199,7 @@ apiRequest.onreadystatechange = () => {
                 
 
                 //Add functionality to Like button for each media item
-                newMediaLikeIcon.addEventListener("click", ($event) => {
+                newMediaLikeIcon.addEventListener("click", () => {
                     totalNumberOfLikes++;
                     newTotalLikes.textContent = totalNumberOfLikes;
                     newMediaLikeCount.textContent++;
@@ -375,11 +377,10 @@ apiRequest.onreadystatechange = () => {
             }
         });
 
-        //navigate lightbox with right-arrow key
+        //navigate lightbox with right-arrow keyboard
         window.addEventListener("keydown", (e) => {
             const keyCode = e.keyCode ? e.keyCode : e.which
             if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 39) {
-                // Escape key pressed
                 let nextMedia = 0;
                 let nextMediaKeys = 0;
                 for(let i=0; i<filteredMediaArray.length; i++){
@@ -411,7 +412,7 @@ apiRequest.onreadystatechange = () => {
             }
         });
 
-        //navigate light box with left-arrow key
+        //navigate light box with left-arrow keyboard
         window.addEventListener("keydown", (e) => {
             const keyCode = e.keyCode ? e.keyCode : e.which
             if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 37) {

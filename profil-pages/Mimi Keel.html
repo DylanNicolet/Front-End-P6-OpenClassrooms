@@ -26,7 +26,6 @@
         </a>
     </header>
     <main id="main">
-        <!--don't forget to fix BEM selectors-->
         <p id="profil-id-id" class="profil-id" aria-hidden="true">243</p> <!--change this number to the "id" of the photographer from database.json-->
         <section class="profil-banner">
             <section class="info-and-contactbtn">
@@ -75,8 +74,10 @@
     </section>
 
     <section id="modal-form__bg" class="modal-form--closed" aria-hidden="true">
-        <dialog id="modal-form">
+        <form id="modal-form" aria-labelledby="modal-form__title">
             <h1 id="modal-form__title">Contact me <br> Mimi Keel</h1><!--add photographers name here-->
+            <i class="fas fa-times" id="modal-form__close-button" aria-label="Close Contact form"></i>
+            <span class="screen-reader-only">Close contact form</span>
             <label for="first-name__input" id="first-name__label">First name</label>
             <input type="text" id="first-name__input">
             <label for="last-name__input" id="last-name__label">Last name</label>
@@ -84,10 +85,9 @@
             <label for="email__input" id="email__label">Email</label>
             <input type="text" id="email__input">
             <label for="message__input" id="message__label">Your message</label>
-            <textarea id="message__input" required></textarea>
-            <button id="modal-form__send-button" type="submit">Send</button>
-            <a href="#" id="modal-form__close-button"><i  class="fas fa-times"></i></a>
-        </dialog>
+            <textarea id="message__input" required aria-required="true"></textarea>
+            <button id="modal-form__send-button" type="submit" aria-label="send">Send</button>
+        </form>
     </section>
     <script src="/JavaScripts/profil-page.js" type="text/javascript"></script>
     <script src="/JavaScripts/modal-form.js" type="text/javascript"></script>

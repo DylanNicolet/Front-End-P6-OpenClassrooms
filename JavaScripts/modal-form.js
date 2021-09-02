@@ -9,13 +9,14 @@ const sendButton = document.getElementById("modal-form__send-button");
 const ModalFormCloseButton = document.getElementById("modal-form__close-button")
 
 //open modal form
-contactButton.addEventListener("click", () => {
+contactButton.addEventListener("click", () => {             
     mainSection.setAttribute("aria-hidden", "true");
     modalFormBackground.setAttribute("aria-hidden", "false");
     modalFormBackground.classList.remove("modal-form--closed");
-    modalFormBackground.classList.add("modal-form--openned");
-    modalForm.setAttribute("open", "");
+    modalFormBackground.classList.add("modal-form--openned");       
     body.style.overflow = "hidden";
+    window.setTimeout(() => ModalFormCloseButton.focus(), 0);
+    ModalFormCloseButton.setAttribute("tabindex", "0");
 })
 
 
@@ -70,9 +71,12 @@ sendButton.addEventListener("click", () => {
         modalFormBackground.classList.remove("modal-form--openned");
         modalFormBackground.classList.add("modal-form--closed");
         mainSection.removeAttribute("aria-hidden");
+        mainSection.removeAttribute("tab-index");
     }
     
 })
+
+
 
 //close button functionality
 ModalFormCloseButton.addEventListener("click", () => {

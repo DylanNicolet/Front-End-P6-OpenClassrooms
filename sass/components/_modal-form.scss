@@ -21,9 +21,10 @@
     position: relative;
 
     @include desktop-only{
+        padding: 2%;
         width: 350px;
         height: 500px;
-        margin-top: auto;
+        border-radius: 5px;
     }
 
     &__bg{
