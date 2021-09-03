@@ -63,11 +63,11 @@
 
     <section id="lightbox-bg" class="lightbox--closed" role="dialog" aria-hidden="true">
         <dialog id="lightbox">
-            <i id="lightbox__previous-btn" class="fas fa-chevron-left"></i>
+            <i id="lightbox__previous-btn" class="fas fa-chevron-left" tabindex="2"></i><span class="screen-reader-only">Move to previous image</span>
             <section id="lightbox__media-container"></section>
             <section id="lightbox__close-next-btn">
-                <i id="lightbox__close-btn" class="fas fa-times"></i>
-                <i id="lightbox__next-btn" class="fas fa-chevron-right"></i>
+                <i id="lightbox__close-btn" class="fas fa-times" tabindex="1"></i><span class="screen-reader-only">Close enlarged image</span>
+                <i id="lightbox__next-btn" class="fas fa-chevron-right" tabindex="4"></i><span class="screen-reader-only">Move to next image</span>
             </section>
             <p id="lightbox__title"></p>
         </dialog>
@@ -76,7 +76,7 @@
     <section id="modal-form__bg" class="modal-form--closed" aria-hidden="true">
         <form id="modal-form" aria-labelledby="modal-form__title">
             <h1 id="modal-form__title">Contact me <br> Mimi Keel</h1><!--add photographers name here-->
-            <i class="fas fa-times" id="modal-form__close-button" aria-label="Close Contact form"></i>
+            <i class="fas fa-times" id="modal-form__close-button"></i>
             <span class="screen-reader-only">Close contact form</span>
             <label for="first-name__input" id="first-name__label">First name</label>
             <input type="text" id="first-name__input">

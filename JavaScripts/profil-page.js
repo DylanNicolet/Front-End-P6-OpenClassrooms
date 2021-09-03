@@ -126,8 +126,7 @@ apiRequest.onreadystatechange = () => {
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
                         body.style.overflow = "hidden";
-                        window.setTimeout(() => lightBoxCloseBtn.focus(), 0);
-                        lightBoxCloseBtn.setAttribute("tabindex", "0");
+                        lightBoxCloseBtn.focus();
                         lightBoxMediaContainer.innerHTML = "";
                         lightboxMedia = document.createElement('img');
 
@@ -136,6 +135,7 @@ apiRequest.onreadystatechange = () => {
                                 lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].image);
                                 lightBoxTitle.textContent = currentPhotographerMedia[i].title;
                                 lightboxMedia.setAttribute("alt", currentPhotographerMedia[i].description);
+                                lightboxMedia.setAttribute("tabindex", "3");
                             }
                         }
                         lightboxMedia.setAttribute("id", "lightbox__media");
@@ -164,7 +164,6 @@ apiRequest.onreadystatechange = () => {
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
                         body.style.overflow = "hidden";
-                        lightBoxCloseBtn.focus();
                         lightBoxMediaContainer.innerHTML = "";
                         lightboxMedia = document.createElement('video');
 
@@ -173,6 +172,7 @@ apiRequest.onreadystatechange = () => {
                                 lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].video);
                                 lightboxMedia.setAttribute("type", "video/mp4");
                                 lightboxMedia.setAttribute("controls", "");
+                                lightboxMedia.setAttribute("tabindex", "3");
                                 lightBoxTitle.textContent = currentPhotographerMedia[i].title;
                             }
                         }
@@ -291,19 +291,40 @@ apiRequest.onreadystatechange = () => {
             loadMedia(filteredMediaArray);
         });
 
-
-        //lightbox close-btn
-        lightBoxCloseBtn.addEventListener("click", () => {
+        //function to close ligthbox
+        function closeLightBox(){
             mainSection.setAttribute("aria-hidden", "false");
             lightboxBg.setAttribute("aria-hidden", "true");
             lightboxBg.classList.remove("lightbox--openned");
             lightboxBg.classList.add("lightbox--closed");
             lightBox.removeAttribute("open");
             body.style.overflow = "visible";
+        }
+
+
+        //lightbox close-btn
+        lightBoxCloseBtn.addEventListener("click", () => {
+            closeLightBox();
         });
 
-        //lightbox backward arrow functionality
-        lightBoxPreviousBtn.addEventListener("click", () => {
+        // Close lightBox when escape key is pressed
+        window.addEventListener("keydown", (e) => {
+            const keyCode = e.keyCode ? e.keyCode : e.which
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 27) {
+                closeLightBox();
+            }
+        });
+
+        //close lightbox with enter key
+        lightBoxCloseBtn.addEventListener("keydown", (e) => {
+            const keyCode = e.keyCode ? e.keyCode : e.which
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 13) {
+                closeLightBox();
+            }
+        });
+
+        //function for previous lightbox image
+        function previousLightBoxImage(){
             let previousMedia = 0;
             let previousMediaKeys = 0;
             for(let i=0; i<filteredMediaArray.length; i++){
@@ -319,6 +340,7 @@ apiRequest.onreadystatechange = () => {
                 lightboxMedia.setAttribute("alt", previousMedia.description);
                 lightBoxTitle.textContent = previousMedia.title;
                 lightboxMedia.setAttribute("id", "lightbox__media");
+                lightboxMedia.setAttribute("tabindex", "3");
                 lightBoxMediaContainer.appendChild(lightboxMedia);
             }
             if(previousMediaKeys.includes("video")){
@@ -329,12 +351,34 @@ apiRequest.onreadystatechange = () => {
                 lightboxMedia.setAttribute("controls", "");
                 lightBoxTitle.textContent = previousMedia.title;
                 lightboxMedia.setAttribute("id", "lightbox__media");
+                lightboxMedia.setAttribute("tabindex", "3");
                 lightBoxMediaContainer.appendChild(lightboxMedia);
+            }
+        }
+
+        //lightbox backward arrow functionality
+        lightBoxPreviousBtn.addEventListener("click", () => {
+            previousLightBoxImage();
+        });
+
+        //navigate light box with left-arrow on keyboard
+        window.addEventListener("keydown", (e) => {
+            const keyCode = e.keyCode ? e.keyCode : e.which
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 37) {
+                previousLightBoxImage();
             }
         });
 
-        //lightbox forward arrow functionality
-        lightBoxNextBtn.addEventListener("click", () => {
+        //navigate lightbox with enter on backward arrow
+        lightBoxPreviousBtn.addEventListener("keydown", (e) => {
+            const keyCode = e.keyCode ? e.keyCode : e.which
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 13) {
+                previousLightBoxImage();
+            }
+        });
+
+        //function for next lightbox image
+        function nextLightBoxImage(){
             let nextMedia = 0;
             let nextMediaKeys = 0;
             for(let i=0; i<filteredMediaArray.length; i++){
@@ -350,6 +394,7 @@ apiRequest.onreadystatechange = () => {
                 lightboxMedia.setAttribute("alt", nextMedia.description);
                 lightBoxTitle.textContent = nextMedia.title;
                 lightboxMedia.setAttribute("id", "lightbox__media");
+                lightboxMedia.setAttribute("tabindex", "3");
                 lightBoxMediaContainer.appendChild(lightboxMedia);
             }
             if(nextMediaKeys.includes("video")){
@@ -360,91 +405,52 @@ apiRequest.onreadystatechange = () => {
                 lightboxMedia.setAttribute("controls", "");
                 lightBoxTitle.textContent = nextMedia.title;
                 lightboxMedia.setAttribute("id", "lightbox__media");
+                lightboxMedia.setAttribute("tabindex", "3");
                 lightBoxMediaContainer.appendChild(lightboxMedia);
             }
-        }); 
+        }
 
-        // Close lightBox when escape key is pressed
-        window.addEventListener("keydown", (e) => {
-            const keyCode = e.keyCode ? e.keyCode : e.which
-            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 27) {
-                // Escape key pressed
-                mainSection.setAttribute("aria-hidden", "false");
-                lightboxBg.setAttribute("aria-hidden", "true");
-                lightboxBg.classList.remove("lightbox--openned");
-                lightboxBg.classList.add("lightbox--closed");
-                lightBox.removeAttribute("open");
-                body.style.overflow = "visible";
-            }
-        });
+        //lightbox forward arrow functionality
+        lightBoxNextBtn.addEventListener("click", () => {
+            nextLightBoxImage();
+        }); 
 
         //navigate lightbox with right-arrow keyboard
         window.addEventListener("keydown", (e) => {
             const keyCode = e.keyCode ? e.keyCode : e.which
             if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 39) {
-                let nextMedia = 0;
-                let nextMediaKeys = 0;
-                for(let i=0; i<filteredMediaArray.length; i++){
-                    if(lightBoxTitle.textContent === filteredMediaArray[i].title){
-                        nextMedia = filteredMediaArray[i+1];
-                        nextMediaKeys = Object.keys(filteredMediaArray[i+1]);
-                    }
-                }
-                if(nextMediaKeys.includes("image")){
-                    lightBoxMediaContainer.innerHTML = "";
-                    lightboxMedia = document.createElement('img');
-                    lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + nextMedia.image);
-                    lightboxMedia.setAttribute("alt", nextMedia.description);
-                    lightBoxTitle.textContent = nextMedia.title;
-                    lightboxMedia.setAttribute("id", "lightbox__media");
-                    lightBoxMediaContainer.appendChild(lightboxMedia);
-                }
-                if(nextMediaKeys.includes("video")){
-                    lightBoxMediaContainer.innerHTML = "";
-                    lightboxMedia = document.createElement('video');
-                    lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + nextMedia.video);
-                    lightboxMedia.setAttribute("type", "video/mp4");
-                    lightboxMedia.setAttribute("controls", "");
-                    lightBoxTitle.textContent = nextMedia.title;
-                    lightboxMedia.setAttribute("id", "lightbox__media");
-                    lightBoxMediaContainer.appendChild(lightboxMedia);
-                }
-
+                nextLightBoxImage();
             }
         });
 
-        //navigate light box with left-arrow keyboard
-        window.addEventListener("keydown", (e) => {
+        //navigate lightbox with enter on forward arrow
+        lightBoxNextBtn.addEventListener("keydown", (e) => {
             const keyCode = e.keyCode ? e.keyCode : e.which
-            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 37) {
-                let previousMedia = 0;
-                let previousMediaKeys = 0;
-                for(let i=0; i<filteredMediaArray.length; i++){
-                    if(lightBoxTitle.textContent === filteredMediaArray[i].title){
-                        previousMedia = filteredMediaArray[i-1];
-                        previousMediaKeys = Object.keys(filteredMediaArray[i-1]);
-                    }
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 13) {
+                nextLightBoxImage();
+            }
+        });
+
+        //constrain focus inside of light box
+        document.addEventListener("keydown", (e) => {
+            let isTabPressed = e.key === "tab" || e.keyCode === 9;
+        
+            if(!isTabPressed){
+                return;
+            }
+        
+            if(e.shiftKey){
+                if(document.activeElement === lightBoxCloseBtn){
+                    lightBoxNextBtn.focus();
+                    e.preventDefault();
                 }
-                if(previousMediaKeys.includes("image")){
-                    lightBoxMediaContainer.innerHTML = "";
-                    lightboxMedia = document.createElement('img');
-                    lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.image);
-                    lightboxMedia.setAttribute("alt", previousMedia.description);
-                    lightBoxTitle.textContent = previousMedia.title;
-                    lightboxMedia.setAttribute("id", "lightbox__media");
-                    lightBoxMediaContainer.appendChild(lightboxMedia);
-                }
-                if(previousMediaKeys.includes("video")){
-                    lightBoxMediaContainer.innerHTML = "";
-                    lightboxMedia = document.createElement('video');
-                    lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.video);
-                    lightboxMedia.setAttribute("type", "video/mp4");
-                    lightboxMedia.setAttribute("controls", "");
-                    lightBoxTitle.textContent = previousMedia.title;
-                    lightboxMedia.setAttribute("id", "lightbox__media");
-                    lightBoxMediaContainer.appendChild(lightboxMedia);
+            } else {
+                if(document.activeElement === lightBoxNextBtn){
+                    lightBoxCloseBtn.focus();
+                    e.preventDefault();
                 }
             }
         });
+
     }
 }
