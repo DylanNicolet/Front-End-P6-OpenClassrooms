@@ -73,17 +73,19 @@
         </dialog>
     </section>
 
-    <section id="modal-form__bg" class="modal-form--closed" aria-hidden="true">
-        <form id="modal-form" aria-labelledby="modal-form__title">
+    <section id="modal-form__bg" class="modal-form--openned" aria-hidden="true">
+        <form id="modal-form" aria-labelledby="modal-form__title" onsubmit=" validate(); return false">
             <h1 id="modal-form__title">Contact me <br> Mimi Keel</h1><!--add photographers name here-->
-            <i class="fas fa-times" id="modal-form__close-button"></i>
-            <span class="screen-reader-only">Close contact form</span>
+            <i class="fas fa-times" id="modal-form__close-button"></i><span class="screen-reader-only">Close contact form</span>
             <label for="first-name__input" id="first-name__label">First name</label>
-            <input type="text" id="first-name__input">
+            <input type="text" id="first-name__input" required aria-required="true">
+            <p id="invalid-first-name" class="invalid-message" aria-hidden="true">! Please enter a valid first name</p>
             <label for="last-name__input" id="last-name__label">Last name</label>
-            <input type="text" id="last-name__input">
-            <label for="email__input" id="email__label">Email</label>
+            <input type="text" id="last-name__input" required aria-required="true">
+            <p id="invalid-last-name" class="invalid-message" aria-hidden="true">! Please enter a valid last name</p>
+            <label for="email__input" id="email__label" required aria-required="true">Email</label>
             <input type="text" id="email__input">
+            <p id="invalid-email" class="invalid-message" aria-hidden="true">! Please enter a valid Email adress</p>
             <label for="message__input" id="message__label">Your message</label>
             <textarea id="message__input" required aria-required="true"></textarea>
             <button id="modal-form__send-button" type="submit" aria-label="send">Send</button>
