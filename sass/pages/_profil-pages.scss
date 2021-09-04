@@ -1,0 +1,192 @@
+.profilpage-header{
+    margin: 30px 0px 0px 0px;
+}
+
+.profil-id{
+    display: none;
+}
+
+.profil-banner{
+    display: flex;
+    justify-content: space-between;
+
+    @include desktop-only{
+        background-color: rgb(250, 250, 250);
+        padding: 45px 30px;
+    }
+}
+
+.profil-tags{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profil-name{
+    color: $color-font-primary;
+    font-weight: 400;
+    font-size: 2.6em;
+    margin: 15px 0px 0px 0px;
+    cursor: default;
+
+    @include desktop-only{
+        margin: 0px;
+    }
+}
+
+.profil-city{
+    color: $color-primary;
+    font-size: 1em;
+    margin: 0px;
+    cursor: default;
+}
+
+.profil-tagline{
+    font-size: 0.8em;
+    margin: 5px 0px 0px 0px;
+    color: $color-font-tertiary;
+    cursor: default;
+
+    @include desktop-only{
+        margin: 10px 0px;
+    }
+}
+
+.profilpage-tags{
+    color:$color-primary;
+    display: block;
+    text-decoration: none;
+    border: 1.5px solid #d6d6d6;
+    border-radius: 15px;
+    padding: 2px 7px;
+    margin: 2px;
+    font-size: 0.8em;
+    font-weight: 500;
+
+    &:hover, &:focus{
+        background-color: $color-primary;
+        color: $color-tertiary;
+    }
+}
+
+.profil-picture{
+    margin-top: 15px;
+    min-width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    @include desktop-only{
+        height: 170px;
+        min-width: 170px;
+        margin-top: 0px;
+    }
+}
+
+.info-and-contactbtn{
+    @include desktop-only{
+        display: flex;
+    }
+}
+
+.media-section{
+    margin-top: 50px;
+    min-width: 100%;
+
+    @include desktop-only{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    a{
+        display: block;
+        width: 100%;
+        height: 200px;
+
+        @include desktop-only{
+            width: 330px;
+            height: 300px;
+        }
+    }
+
+    &__card{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        @include desktop-only{
+            width: 330px;
+            margin: auto 20px 30px 20px;
+        }
+    }
+
+    &__media{
+        width: 100%;
+        height: 200px;
+        border-radius: 5px;
+        object-fit: cover;
+
+        @include desktop-only{
+            height: 300px;
+        }
+    }
+
+    &__title{
+        margin: 10px 0px 10px 0px;
+        color: $color-primary;
+        cursor: default;
+    }
+
+    &__likesection{
+        display: flex;
+        align-items: center;
+    }
+
+    &__likecount{
+        margin: 0px 5px 0px 0px;
+        color: $color-primary;
+        font-weight: 500;
+        cursor: default;
+    }
+
+    i{
+        color: $color-primary;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+
+#total-likes-id{
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: default;
+
+    @include desktop-only{
+        position: fixed;
+        bottom: 0px;
+        right: 30px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        width: 250px;
+    }
+}
+
+#like-and-icon{
+    display: flex;
+    align-items: center;
+
+    p{
+        margin: auto 5px auto 20px;
+    }
+}
+
+.profil-page-price{
+    margin: 13px 20px;
+}

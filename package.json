@@ -1,0 +1,22 @@
+{
+  "name": "front-end-p6-openclassrooms",
+  "version": "1.0.0",
+  "description": "Front-End-P6-OpenClassrooms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DylanNicolet/Front-End-P6-OpenClassrooms.git"
+  },
+  "author": "Nicolet Dylan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DylanNicolet/Front-End-P6-OpenClassrooms/issues"
+  },
+  "homepage": "https://github.com/DylanNicolet/Front-End-P6-OpenClassrooms#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
+}

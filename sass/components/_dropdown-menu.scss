@@ -1,0 +1,34 @@
+.filter{
+    display: none;
+    width: 100%;
+
+    @include desktop-only{
+        display: flex;
+        margin-top: 30px;
+    }
+
+    label{
+        margin-right: 15px;
+    }
+}
+
+#select-menu{
+    position: relative;
+
+    &__list{
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        background-color: $color-primary;
+        border-radius: 3px;
+        overflow: hidden;
+
+        button{
+            cursor: pointer;
+        }
+    }
+
+    &__button{
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,26 @@
+body{
+    width: 90%;
+    margin: 5px 5%;
+    font-family: 'DM Sans', sans-serif;
+    max-width: 1980px;
+    position: relative;
+
+    @include desktop-only{
+        margin: 5px auto;
+    }
+}
+
+.screen-reader-only{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.hidden{
+    display: none;
+}

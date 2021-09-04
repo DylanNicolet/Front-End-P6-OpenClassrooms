@@ -1,0 +1,66 @@
+.contact-button{ /*for profil pages*/
+    position: fixed;
+    bottom: 5vh;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover, &:focus{
+        background-color: $color-secondary;
+        color: black;
+    }
+
+    @include desktop-only{
+        position: initial;
+        height: 45px;
+        width: 120px;
+        text-align: center;
+    }
+}
+
+#modal-form{
+    &__send-button{
+        background-color: $color-primary;
+        color: $color-tertiary;
+        font-family: 'DM Sans', sans-serif;
+        border-radius: 5px;
+        border-width: 0px;
+        height: 40px;
+        width: 170px;
+        font-size: 1.2em;
+        margin: 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        @include desktop-only{
+            display: inline-block;
+            margin: 0px auto;
+            width: 100px;
+            font-size: 1em;
+        }
+    }
+
+    &__close-button{
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        font-size: 30px;
+        color: $color-tertiary;
+        cursor: pointer;
+    }
+}
+
+.button-style{
+    background-color: $color-primary;
+    color: $color-tertiary;
+    font-family: 'DM Sans', sans-serif;
+    border-radius: 5px;
+    border-width: 0px;
+    padding: 7px 10px;
+}
