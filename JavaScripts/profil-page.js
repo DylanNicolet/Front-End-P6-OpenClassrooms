@@ -63,7 +63,7 @@ apiRequest.onreadystatechange = () => {
         profilName.textContent = currentPhotographer.name;
         profilCity.textContent = currentPhotographer.city+", " + currentPhotographer.country;
         profilTagline.textContent = currentPhotographer.tagline;
-        profilPicture.setAttribute("src", "images/Photographers/" + currentPhotographer.portrait);
+        profilPicture.setAttribute("src", "/images/Photographers/" + currentPhotographer.portrait);
 
         //loop  to create tags for profil-banner
         for (j=0; j<currentPhotographer.tags.length; j++){
@@ -110,7 +110,7 @@ apiRequest.onreadystatechange = () => {
                     const newImgLink = document.createElement('a');
                     newImgLink.setAttribute("href", "#"); 
                     const newImg = document.createElement('img');
-                    newImg.setAttribute("src", "images/" + currentPhotographer.name + "/" + mediaArray[x].image);
+                    newImg.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].image);
                     newImg.setAttribute("alt", mediaArray[x].description);
                     newImg.setAttribute("class", "media-section__media");
                     newImg.setAttribute("id", mediaArray[x].id);
@@ -132,7 +132,7 @@ apiRequest.onreadystatechange = () => {
 
                         for(let i=0; i<currentPhotographerMedia.length; i++){
                             if (mediaId == currentPhotographerMedia[i].id){
-                                lightboxMedia.setAttribute("src", "images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].image);
+                                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].image);
                                 lightBoxTitle.textContent = currentPhotographerMedia[i].title;
                                 lightboxMedia.setAttribute("alt", currentPhotographerMedia[i].description);
                                 lightboxMedia.setAttribute("tabindex", "3");
@@ -148,7 +148,7 @@ apiRequest.onreadystatechange = () => {
                     const newVideoLink = document.createElement('a');
                     newVideoLink.setAttribute("href", "#");
                     const newVideo = document.createElement('video');
-                    newVideo.setAttribute("src", "images/" + currentPhotographer.name + "/" + mediaArray[x].video);
+                    newVideo.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].video);
                     newVideo.setAttribute("type", "video/mp4");
                     newVideo.setAttribute("class", "media-section__media");
                     newVideo.setAttribute("id", mediaArray[x].id);
@@ -169,7 +169,7 @@ apiRequest.onreadystatechange = () => {
 
                         for(let i=0; i<currentPhotographerMedia.length; i++){
                             if (mediaId == currentPhotographerMedia[i].id){
-                                lightboxMedia.setAttribute("src", "images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].video);
+                                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + currentPhotographerMedia[i].video);
                                 lightboxMedia.setAttribute("type", "video/mp4");
                                 lightboxMedia.setAttribute("controls", "");
                                 lightboxMedia.setAttribute("tabindex", "3");
@@ -338,7 +338,7 @@ apiRequest.onreadystatechange = () => {
             if(previousMediaKeys.includes("image")){
                 lightBoxMediaContainer.innerHTML = "";
                 lightboxMedia = document.createElement('img');
-                lightboxMedia.setAttribute("src", "images/" + currentPhotographer.name + "/" + previousMedia.image);
+                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.image);
                 lightboxMedia.setAttribute("alt", previousMedia.description);
                 lightBoxTitle.textContent = previousMedia.title;
                 lightboxMedia.setAttribute("id", "lightbox__media");
@@ -348,7 +348,7 @@ apiRequest.onreadystatechange = () => {
             if(previousMediaKeys.includes("video")){
                 lightBoxMediaContainer.innerHTML = "";
                 lightboxMedia = document.createElement('video');
-                lightboxMedia.setAttribute("src", "images/" + currentPhotographer.name + "/" + previousMedia.video);
+                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + previousMedia.video);
                 lightboxMedia.setAttribute("type", "video/mp4");
                 lightboxMedia.setAttribute("controls", "");
                 lightBoxTitle.textContent = previousMedia.title;
@@ -390,7 +390,7 @@ apiRequest.onreadystatechange = () => {
             if(nextMediaKeys.includes("image")){
                 lightBoxMediaContainer.innerHTML = "";
                 lightboxMedia = document.createElement('img');
-                lightboxMedia.setAttribute("src", "images/" + currentPhotographer.name + "/" + nextMedia.image);
+                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + nextMedia.image);
                 lightboxMedia.setAttribute("alt", nextMedia.description);
                 lightBoxTitle.textContent = nextMedia.title;
                 lightboxMedia.setAttribute("id", "lightbox__media");
@@ -400,7 +400,7 @@ apiRequest.onreadystatechange = () => {
             if(nextMediaKeys.includes("video")){
                 lightBoxMediaContainer.innerHTML = "";
                 lightboxMedia = document.createElement('video');
-                lightboxMedia.setAttribute("src", "images/" + currentPhotographer.name + "/" + nextMedia.video);
+                lightboxMedia.setAttribute("src", "/images/" + currentPhotographer.name + "/" + nextMedia.video);
                 lightboxMedia.setAttribute("type", "video/mp4");
                 lightboxMedia.setAttribute("controls", "");
                 lightBoxTitle.textContent = nextMedia.title;
