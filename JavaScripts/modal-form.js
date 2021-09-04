@@ -103,7 +103,7 @@ function validate(){
 
 //constrain focus inside modal form
 document.addEventListener("keydown", (e) => {
-    let isTabPressed = e.key === "tab" || e.keyCode === 9;
+    let isTabPressed = e.key === "Tab";
 
     if(!isTabPressed){
         return;
@@ -149,18 +149,14 @@ ModalFormCloseButton.addEventListener("click", () => {
 
 //close button with enter key
 ModalFormCloseButton.addEventListener("keydown", (e) => {
-    const keyCode = e.keyCode ? e.keyCode : e.which
-    if (modalFormBackground.getAttribute("aria-hidden") == 'false' && keyCode == 13) {
-        // Escape key pressed
+    if (modalFormBackground.getAttribute("aria-hidden") == 'false' && e.key == "Enter") {
         closeModalForm();
     }
 });
 
 //close modal-form when escape key is pressed
 window.addEventListener("keydown", (e) => {
-    const keyCode = e.keyCode ? e.keyCode : e.which
-    if (modalFormBackground.getAttribute("aria-hidden") == 'false' && keyCode == 27) {
-        // Escape key pressed
+    if (modalFormBackground.getAttribute("aria-hidden") == 'false' && e.key == "Escape") {
         closeModalForm();
     }
 });

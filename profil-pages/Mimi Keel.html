@@ -43,7 +43,7 @@
         <section class="filter">
             <label for="select-menu" id="select-menu__label">Order by</label>
             <section id="select-menu" aria-labelledby="select-menu__label">
-                <button aria-haspopup="listbox" id="select-menu__button" class="button-filter button-style">Popularity</button>
+                <button aria-haspopup="listbox" aria-expanded="false" id="select-menu__button" class="button-filter button-style">Popularity</button>
                 <section id="select-menu__list" role="listbox" class="hidden">
                     <button id="select-menu__popularity" role="option" class="button-style">Popularity</button>
                     <button id="select-menu__date" role="option" class="button-style">Date</button>
@@ -73,7 +73,7 @@
         </dialog>
     </section>
 
-    <section id="modal-form__bg" class="modal-form--openned" aria-hidden="true">
+    <section id="modal-form__bg" class="modal-form--closed" aria-hidden="true">
         <form id="modal-form" aria-labelledby="modal-form__title" onsubmit=" validate(); return false">
             <h1 id="modal-form__title">Contact me <br> Mimi Keel</h1><!--add photographers name here-->
             <i class="fas fa-times" id="modal-form__close-button"></i><span class="screen-reader-only">Close contact form</span>

@@ -245,11 +245,13 @@ apiRequest.onreadystatechange = () => {
         //add functionality to order-by btn
         filterButton.addEventListener("click",() =>{
             filterList.classList.remove("hidden");
+            filterButton.setAttribute("aria-expanded", "true");
         });
 
         //order by popularity
         filterPopularity.addEventListener("click", () => {
             filterList.classList.add("hidden");
+            filterButton.setAttribute("aria-expanded", "false");
             mediaSection.innerHTML = "";
             filterButton.textContent = "Popularity";
 
@@ -263,6 +265,7 @@ apiRequest.onreadystatechange = () => {
         //order by date
         filterDate.addEventListener("click", () => {
             filterList.classList.add("hidden");
+            filterButton.setAttribute("aria-expanded", "false");
             mediaSection.innerHTML = "";
             filterButton.textContent = "Date";
 
@@ -276,6 +279,7 @@ apiRequest.onreadystatechange = () => {
         //order by title
         filterTitle.addEventListener("click", () => {
             filterList.classList.add("hidden");
+            filterButton.setAttribute("aria-expanded", "false");
             mediaSection.innerHTML = "";
             filterButton.textContent = "Title";
 
@@ -309,16 +313,14 @@ apiRequest.onreadystatechange = () => {
 
         // Close lightBox when escape key is pressed
         window.addEventListener("keydown", (e) => {
-            const keyCode = e.keyCode ? e.keyCode : e.which
-            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 27) {
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && e.key == "Escape") {
                 closeLightBox();
             }
         });
 
         //close lightbox with enter key
         lightBoxCloseBtn.addEventListener("keydown", (e) => {
-            const keyCode = e.keyCode ? e.keyCode : e.which
-            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 13) {
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && e.key == "Enter") {
                 closeLightBox();
             }
         });
@@ -363,16 +365,14 @@ apiRequest.onreadystatechange = () => {
 
         //navigate light box with left-arrow on keyboard
         window.addEventListener("keydown", (e) => {
-            const keyCode = e.keyCode ? e.keyCode : e.which
-            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 37) {
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && e.key == "ArrowLeft") {
                 previousLightBoxImage();
             }
         });
 
         //navigate lightbox with enter on backward arrow
         lightBoxPreviousBtn.addEventListener("keydown", (e) => {
-            const keyCode = e.keyCode ? e.keyCode : e.which
-            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 13) {
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && e.key == "Enter") {
                 previousLightBoxImage();
             }
         });
@@ -417,23 +417,21 @@ apiRequest.onreadystatechange = () => {
 
         //navigate lightbox with right-arrow keyboard
         window.addEventListener("keydown", (e) => {
-            const keyCode = e.keyCode ? e.keyCode : e.which
-            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 39) {
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && e.key == "ArrowRight") {
                 nextLightBoxImage();
             }
         });
 
         //navigate lightbox with enter on forward arrow
         lightBoxNextBtn.addEventListener("keydown", (e) => {
-            const keyCode = e.keyCode ? e.keyCode : e.which
-            if (lightboxBg.getAttribute("aria-hidden") == 'false' && keyCode == 13) {
+            if (lightboxBg.getAttribute("aria-hidden") == 'false' && e.key == "Enter") {
                 nextLightBoxImage();
             }
         });
 
         //constrain focus inside of light box
         document.addEventListener("keydown", (e) => {
-            let isTabPressed = e.key === "tab" || e.keyCode === 9;
+            let isTabPressed = e.key === "Tab";
         
             if(!isTabPressed){
                 return;
