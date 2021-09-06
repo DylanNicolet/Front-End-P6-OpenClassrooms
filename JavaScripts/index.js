@@ -77,6 +77,7 @@ function createProfil(photographers){
         newLink.setAttribute("href", "/profil-pages/" + photographers[z].name + ".html");
         newLink.setAttribute("aria-label", photographers[z].name);
         newImg.setAttribute("src", "/images/Photographers/" + photographerImg);
+        console.log("/images/Photographers/" + photographerImg);
         newImg.setAttribute("alt", "");
         newH2.textContent = photographers[z].name;
         newLocation.textContent = photographers[z].city + ", " + photographers[z].country;
