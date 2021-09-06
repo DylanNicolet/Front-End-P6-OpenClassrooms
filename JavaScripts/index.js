@@ -76,7 +76,7 @@ function createProfil(photographers){
         //add content from JSON file to new DOM elements
         newLink.setAttribute("href", "/profil-pages/" + photographers[z].name + ".html");
         newLink.setAttribute("aria-label", photographers[z].name);
-        newImg.setAttribute("src", "/images/Photographers/" + photographerImg);
+        newImg.setAttribute("src", "./images/Photographers/" + photographerImg);
         console.log("/images/Photographers/" + photographerImg);
         newImg.setAttribute("alt", "");
         newH2.textContent = photographers[z].name;
