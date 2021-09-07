@@ -111,7 +111,7 @@ apiRequest.onreadystatechange = () => {
                     newImgLink.setAttribute("href", "#"); 
                     const newImg = document.createElement('img');
                     newImg.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].image);
-                    newImg.setAttribute("alt", mediaArray[x].description);
+                    newImg.setAttribute("alt", mediaArray[x].description + ", closeup view");
                     newImg.setAttribute("class", "media-section__media");
                     newImg.setAttribute("id", mediaArray[x].id);
                     newMediaCard.appendChild(newImgLink);
@@ -125,6 +125,7 @@ apiRequest.onreadystatechange = () => {
                         lightboxBg.classList.remove("lightbox--closed");
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
+                        lightBox.setAttribute("aria-modal", "true");
                         body.style.overflow = "hidden";
                         lightBoxCloseBtn.focus();
                         lightBoxMediaContainer.innerHTML = "";
@@ -163,6 +164,7 @@ apiRequest.onreadystatechange = () => {
                         lightboxBg.classList.remove("lightbox--closed");
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
+                        lightBox.setAttribute("aria-modal", "true");
                         body.style.overflow = "hidden";
                         lightBoxMediaContainer.innerHTML = "";
                         lightboxMedia = document.createElement('video');
@@ -302,6 +304,7 @@ apiRequest.onreadystatechange = () => {
             lightboxBg.classList.remove("lightbox--openned");
             lightboxBg.classList.add("lightbox--closed");
             lightBox.removeAttribute("open");
+            lightBox.setAttribute("aria-modal", "false");
             body.style.overflow = "visible";
         }
 
