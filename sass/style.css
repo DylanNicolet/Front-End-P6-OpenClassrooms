@@ -91,6 +91,8 @@ body {
   right: 15px;
   font-size: 30px;
   color: #fafafa;
+  background-color: #DB8876;
+  border: 0;
   cursor: pointer;
 }
 
@@ -267,16 +269,21 @@ body {
 
 #lightbox__close-btn {
   position: absolute;
+  right: 2.5vw;
   top: 0px;
-  right: 3vw;
   color: #901c1c;
+  padding: 0px;
+  border: 0;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 300;
   cursor: pointer;
 }
 
 @media only screen and (min-width: 1260px) {
   #lightbox__close-btn {
     font-size: 25px;
-    right: 3vh;
+    right: 2.5vh;
   }
 }
 
@@ -765,14 +772,14 @@ header ul {
   }
 }
 
-.media-section a {
+.media-section__image-link {
   display: block;
   width: 100%;
   height: 200px;
 }
 
 @media only screen and (min-width: 1260px) {
-  .media-section a {
+  .media-section__image-link {
     width: 330px;
     height: 300px;
   }
