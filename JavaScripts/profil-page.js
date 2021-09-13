@@ -112,7 +112,7 @@ apiRequest.onreadystatechange = () => {
                     newImgLink.setAttribute("href", "#");
                     newImgLink.setAttribute("class", "media-section__image-link");
                     const newImg = document.createElement('img');
-                    newImg.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].image);
+                    newImg.setAttribute("src", "/dylannicolet.github.io/images/" + currentPhotographer.name + "/" + mediaArray[x].image);
                     newImg.setAttribute("alt", mediaArray[x].description + ", closeup view");
                     newImg.setAttribute("class", "media-section__media");
                     newImg.setAttribute("id", mediaArray[x].id);
