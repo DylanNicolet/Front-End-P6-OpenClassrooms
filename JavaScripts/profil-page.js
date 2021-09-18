@@ -190,7 +190,7 @@ apiRequest.onreadystatechange = () => {
                 newMediaTitle.textContent = mediaArray[x].title;
                 newMediaLikeCount.textContent = mediaArray[x].likes;
                 newMediaLikeLink.setAttribute("aria-label", "Likes");
-                newMediaLikeLink.setAttribute("href", "#");
+                newMediaLikeLink.setAttribute("href", "javascript:;");
                 newMediaLikeIcon.setAttribute("class", "fas fa-heart");
 
                 newMediaCard.setAttribute("class", "media-section__card");

@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="/sass/style.css" type="text/css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/2d28fa9fac.js" crossorigin="anonymous"></script>
-    <title>Fisheye | Mimi Keel</title>
+    <title>Fisheye | Ellie-Rose Wilkens</title>
 </head>
 <body>
     <header class="profilpage-header">
-        <a aria-label="Fisheye Home page" href="/index.html" role="link" class="fisheye-logo-link">
-            <svg viewbox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg" role="none" aria-hidden="true" class="fisheye-logo-svg">
+        <a href="/index.html" role="Image link" class="fisheye-logo-link" aria-label="Fisheye Home page">
+            <svg viewbox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="fisheye-logo-svg" alt="Fisheye Home Page">
                 <path d="M24.7206 0.911621V6.51058H6.31164V17.5783H21.4333V22.9168H6.31164V39.1929H0V0.911621H24.7206Z" fill="#911C1C" />
                 <path d="M34.5825 1.04167C35.24 1.69271 35.6344 2.60417 35.6344 3.64583C35.6344 4.6875 35.24 5.46875 34.5825 6.11979C33.925 6.77083 33.0046 7.16146 31.9527 7.16146C30.9007 7.16146 30.1118 6.77083 29.3228 6.11979C28.6654 5.46875 28.2709 4.55729 28.2709 3.64583C28.2709 2.60417 28.6654 1.82292 29.3228 1.04167C29.9803 0.390625 30.9007 0 31.9527 0C33.0046 0 33.7936 0.390625 34.5825 1.04167ZM34.8455 11.1979V39.1927H28.9283V11.1979H34.8455Z" fill="#911C1C"/>
                 <path d="M43.261 36.9792C40.8941 35.2865 39.7107 32.9427 39.7107 29.9479H45.4964C45.6279 31.3802 46.2853 32.6823 47.6002 33.5937C48.9152 34.5052 50.4931 35.026 52.4655 35.026C54.3064 35.026 55.7528 34.6354 56.9362 33.9844C58.1196 33.3333 58.6456 32.4219 58.6456 31.25C58.6456 30.3385 58.3826 29.6875 57.8566 29.1667C57.3307 28.6458 56.6732 28.3854 55.7528 28.125C54.8323 27.8646 53.5174 27.7344 51.808 27.474H51.6765L50.8876 27.3438C48.6522 27.0833 46.6798 26.6927 45.2334 26.1719C43.787 25.651 42.472 24.8698 41.6831 23.8281C40.7626 22.7865 40.3682 21.4844 40.3682 19.6615C40.3682 17.9688 40.8941 16.4063 41.8146 15.1042C42.735 13.8021 44.1814 12.7604 45.8908 11.9792C47.6002 11.1979 49.5726 10.9375 51.808 10.9375C55.3583 10.9375 58.2511 11.7188 60.355 13.2812C62.5904 14.8438 63.7738 17.0573 63.9053 19.9219H58.1196C57.9881 18.6198 57.3307 17.5781 56.1472 16.7969C54.9638 16.0156 53.5174 15.4948 51.808 15.4948C50.0986 15.4948 48.6522 15.8854 47.7317 16.5365C46.6798 17.1875 46.1538 18.099 46.1538 19.2708C46.1538 20.0521 46.4168 20.7031 46.8113 21.0938C47.3373 21.4844 47.9947 21.7448 48.7837 22.0052C49.5726 22.1354 50.7561 22.3958 52.334 22.526C52.4655 22.526 52.4655 22.526 52.597 22.526C52.7284 22.526 52.7284 22.526 52.8599 22.526C55.3583 22.7865 57.3307 23.1771 59.0401 23.6979C60.618 24.2188 62.0644 25 62.9849 26.1719C64.0368 27.3438 64.5628 28.9062 64.5628 30.8594C64.5628 32.5521 64.0368 34.1146 62.9849 35.4167C61.9329 36.7188 60.4865 37.7604 58.6456 38.5417C56.8047 39.1927 54.8323 39.5833 52.4655 39.5833C48.6522 39.4531 45.6279 38.6719 43.261 36.9792Z" fill="#911C1C"/>
@@ -26,8 +26,7 @@
         </a>
     </header>
     <main id="main">
-        <!--don't forget to fix BEM selectors-->
-        <p id="profil-id-id" class="profil-id">930</p> <!--change this number to the "id" of the photographer from database.json-->
+        <p id="profil-id-id" class="profil-id" aria-hidden="true">930</p> <!--change this number to the "id" of the photographer from database.json-->
         <section class="profil-banner">
             <section class="info-and-contactbtn">
                 <section class="profil-info">
@@ -36,16 +35,16 @@
                     <p id="profil-tagline-id" class="profil-tagline"></p>
                     <section id="profil-tags-id" class="profil-tags"></section>
                 </section>
-                <button class="contact-button button-style">Contact me</button>
+                <button id="contact-button-id" class="contact-button button-style" role="button" aria-label="Contact Me">Contact me</button>
             </section>
             <img alt="" id="profil-picture-id" class="profil-picture">
         </section>
 
         <section class="filter">
-            <label for="select-menu">Order by</label>
-            <section id="select-menu">
-                <button aria-haspopup="listbox" aria-labelledby="exp_elem exp_button" id="select-menu__button" class="button-filter button-style">Popularity</button>
-                <section id="select-menu__list" tabindex="-1" role="listbox" aria-labelledby="exp_elem" class="hidden">
+            <label for="select-menu" id="select-menu__label">Order by</label>
+            <section id="select-menu" aria-labelledby="select-menu__label">
+                <button aria-haspopup="listbox" aria-expanded="false" id="select-menu__button" class="button-filter button-style">Popularity</button>
+                <section id="select-menu__list" role="listbox" class="hidden">
                     <button id="select-menu__popularity" role="option" class="button-style">Popularity</button>
                     <button id="select-menu__date" role="option" class="button-style">Date</button>
                     <button id="select-menu__title" role="option" class="button-style">Title</button>
@@ -58,7 +57,53 @@
         <section class="total-likes-section" id="total-likes-id">
             <section id="like-and-icon"></section>
         </section>
+
+        
     </main>
+
+    <section id="lightbox-bg" class="lightbox--closed" role="dialog" aria-hidden="true" aria-modal="false">
+        <dialog id="lightbox" aria-label="image closeup view" aria-modal="false">
+            <button aria-label="Close dialog" id="lightbox__close-btn" tabindex="1">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <a href="#" aria-label="Previous image" id="lightbox__previous-link" tabindex="2">
+                <i id="lightbox__previous-btn" class="fas fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <section id="lightbox__media-container"></section>
+            <section id="lightbox__close-next-btn">
+                <a href="#" aria-label="Next Image" id="lightbox__next-link" tabindex="4">
+                    <i id="lightbox__next-btn" class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </section>
+            <p id="lightbox__title"></p>
+        </dialog>
+    </section>
+
+    <section id="modal-form__bg" class="modal-form--closed" aria-hidden="true">
+        <form id="modal-form" aria-labelledby="modal-form__title" onsubmit=" validate(); return false">
+            <h1 id="modal-form__title">Contact me <br> Ellie-Rose Wilkens</h1><!--add photographer's name here-->
+
+            <button aria-label="Close contact form" id="modal-form__close-button"><i class="fas fa-times"></i></button>
+            
+            <label for="first-name__input" id="first-name__label">First name</label>
+            <input type="text" id="first-name__input" required aria-required="true">
+            <p id="invalid-first-name" class="invalid-message" aria-hidden="true">! Please enter a valid first name</p>
+
+            <label for="last-name__input" id="last-name__label">Last name</label>
+            <input type="text" id="last-name__input" required aria-required="true">
+            <p id="invalid-last-name" class="invalid-message" aria-hidden="true">! Please enter a valid last name</p>
+
+            <label for="email__input" id="email__label" required aria-required="true">Email</label>
+            <input type="text" id="email__input">
+            <p id="invalid-email" class="invalid-message" aria-hidden="true">! Please enter a valid Email adress</p>
+
+            <label for="message__input" id="message__label">Your message</label>
+            <textarea id="message__input" required aria-required="true"></textarea>
+
+            <button id="modal-form__send-button" type="submit" aria-label="send">Send</button>
+        </form>
+    </section>
     <script src="/JavaScripts/profil-page.js" type="text/javascript"></script>
+    <script src="/JavaScripts/modal-form.js" type="text/javascript"></script>
 </body>
 </html>

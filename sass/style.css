@@ -51,6 +51,7 @@ body {
     height: 45px;
     width: 120px;
     text-align: center;
+    margin-left: 30px;
   }
 }
 
@@ -732,6 +733,7 @@ header ul {
 .profil-picture {
   margin-top: 15px;
   min-width: 100px;
+  max-width: 100px;
   height: 100px;
   -o-object-fit: cover;
      object-fit: cover;

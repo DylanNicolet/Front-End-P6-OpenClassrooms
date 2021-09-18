@@ -81,6 +81,7 @@ function createProfil(photographers){
         newH2.textContent = photographers[z].name;
         newLocation.textContent = photographers[z].city + ", " + photographers[z].country;
         newTagline.textContent = photographers[z].tagline;
+        newTagline.setAttribute("lang", "fr");
         newPrice.textContent = "$" + photographers[z].price + "/day";
 
 
