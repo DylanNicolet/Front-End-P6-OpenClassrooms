@@ -23,8 +23,8 @@ const lightBoxMediaContainer = document.getElementById('lightbox__media-containe
 const lightBoxCloseAndNext = document.getElementById("lightbox__close-next-btn");
 const lightBoxTitle = document.getElementById('lightbox__title');
 const lightBoxCloseBtn = document.getElementById('lightbox__close-btn');
-const lightBoxPreviousBtn = document.getElementById('lightbox__previous-btn');
-const lightBoxNextBtn = document.getElementById('lightbox__next-btn');
+const lightBoxPreviousBtn = document.getElementById('lightbox__previous-link');
+const lightBoxNextBtn = document.getElementById('lightbox__next-link');
 const lightBoxLoadedMedia = document.getElementById('lightbox__media');
 
 
@@ -101,6 +101,7 @@ apiRequest.onreadystatechange = () => {
                 const newMediaCard = document.createElement('section');
                 const newMediaTitle = document.createElement('p');
                 let newMediaLikeCount = document.createElement('p');
+                const newMediaLikeLink = document.createElement('a');
                 const newMediaLikeIcon = document.createElement('i');
                 mediaSection.appendChild(newMediaCard);
                 const newLikeSection = document.createElement('section');
@@ -108,10 +109,11 @@ apiRequest.onreadystatechange = () => {
                 //load image media
                 if(keys.includes("image")){
                     const newImgLink = document.createElement('a');
-                    newImgLink.setAttribute("href", "#"); 
+                    newImgLink.setAttribute("href", "#");
+                    newImgLink.setAttribute("class", "media-section__image-link");
                     const newImg = document.createElement('img');
                     newImg.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].image);
-                    newImg.setAttribute("alt", mediaArray[x].description);
+                    newImg.setAttribute("alt", mediaArray[x].description + ", closeup view");
                     newImg.setAttribute("class", "media-section__media");
                     newImg.setAttribute("id", mediaArray[x].id);
                     newMediaCard.appendChild(newImgLink);
@@ -125,6 +127,7 @@ apiRequest.onreadystatechange = () => {
                         lightboxBg.classList.remove("lightbox--closed");
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
+                        lightBox.setAttribute("aria-modal", "true");
                         body.style.overflow = "hidden";
                         lightBoxCloseBtn.focus();
                         lightBoxMediaContainer.innerHTML = "";
@@ -147,6 +150,7 @@ apiRequest.onreadystatechange = () => {
                 if(keys.includes("video")){
                     const newVideoLink = document.createElement('a');
                     newVideoLink.setAttribute("href", "#");
+                    newVideoLink.setAttribute("class", "media-section__image-link");
                     const newVideo = document.createElement('video');
                     newVideo.setAttribute("src", "/images/" + currentPhotographer.name + "/" + mediaArray[x].video);
                     newVideo.setAttribute("type", "video/mp4");
@@ -163,6 +167,7 @@ apiRequest.onreadystatechange = () => {
                         lightboxBg.classList.remove("lightbox--closed");
                         lightboxBg.setAttribute("class", "lightbox--openned");
                         lightBox.setAttribute("open", "");
+                        lightBox.setAttribute("aria-modal", "true");
                         body.style.overflow = "hidden";
                         lightBoxMediaContainer.innerHTML = "";
                         lightboxMedia = document.createElement('video');
@@ -184,8 +189,9 @@ apiRequest.onreadystatechange = () => {
                 
                 newMediaTitle.textContent = mediaArray[x].title;
                 newMediaLikeCount.textContent = mediaArray[x].likes;
+                newMediaLikeLink.setAttribute("aria-label", "Likes");
+                newMediaLikeLink.setAttribute("href", "#");
                 newMediaLikeIcon.setAttribute("class", "fas fa-heart");
-                newMediaLikeIcon.setAttribute("tabindex", "0");             
 
                 newMediaCard.setAttribute("class", "media-section__card");
                 newMediaTitle.setAttribute("class", "media-section__title");
@@ -195,20 +201,20 @@ apiRequest.onreadystatechange = () => {
                 newMediaCard.appendChild(newMediaTitle);
                 newMediaCard.appendChild(newLikeSection);
                 newLikeSection.appendChild(newMediaLikeCount);
-                newLikeSection.appendChild(newMediaLikeIcon);
+                newLikeSection.appendChild(newMediaLikeLink);
+                newMediaLikeLink.appendChild(newMediaLikeIcon);
 
                 
 
                 //Add functionality to Like button for each media item
-                newMediaLikeIcon.addEventListener("click", () => {
+                newMediaLikeLink.addEventListener("click", () => {
                     totalNumberOfLikes++;
                     newTotalLikes.textContent = totalNumberOfLikes;
                     newMediaLikeCount.textContent++;
                 });
 
-                newMediaLikeIcon.addEventListener("keydown", (e) => {
-                    const keyCode = e.keyCode ? e.keyCode : e.which
-                    if (keyCode == 13) {
+                newMediaLikeLink.addEventListener("keydown", (e) => {
+                    if (e.key == "Enter") {
                         totalNumberOfLikes++;
                         newTotalLikes.textContent = totalNumberOfLikes;
                         newMediaLikeCount.textContent++;
@@ -302,6 +308,7 @@ apiRequest.onreadystatechange = () => {
             lightboxBg.classList.remove("lightbox--openned");
             lightboxBg.classList.add("lightbox--closed");
             lightBox.removeAttribute("open");
+            lightBox.setAttribute("aria-modal", "false");
             body.style.overflow = "visible";
         }
 
