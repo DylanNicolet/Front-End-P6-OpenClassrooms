@@ -169,6 +169,7 @@ apiRequest.onreadystatechange = () => {
                         lightBox.setAttribute("open", "");
                         lightBox.setAttribute("aria-modal", "true");
                         body.style.overflow = "hidden";
+                        lightBoxCloseBtn.focus();
                         lightBoxMediaContainer.innerHTML = "";
                         lightboxMedia = document.createElement('video');
 
@@ -318,7 +319,7 @@ apiRequest.onreadystatechange = () => {
             closeLightBox();
         });
 
-        // Close lightBox when escape key is pressed
+        //close lightBox with escape key
         window.addEventListener("keydown", (e) => {
             if (lightboxBg.getAttribute("aria-hidden") == 'false' && e.key == "Escape") {
                 closeLightBox();
